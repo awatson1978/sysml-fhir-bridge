@@ -64,9 +64,21 @@ immediately):
   at the top** (`Baseline → Post-change → Runtime evidence`) and watch the
   impact analysis happen live: links turn amber (needs recheck) and red
   (broken), and a deleted part gets struck through. Click anything for details.
+
+  ![Trace explorer, Post-change state: the deleted dopplerVelocity metric is struck through as REMOVED with its links invalid (red), and the telemetry requirement's link is stale (amber)](docs/images/trace-explorer-post-change.png)
+
+  *The "Post-change" state, after a second SysML commit tightened a requirement
+  and deleted a sensor. Counts (top-right): 8 valid, 1 stale, 3 invalid — all
+  computed, not hand-maintained.*
+
 - **`generated/exmc-medical-icd.html`** — the auto-generated Interface Control
   Document, formatted like a real engineering data package. Nobody typed it; it
   was built from the model.
+
+  ![Interface Control Document for the ExMC medical data interface, showing the title block, a red "generated from model — do not edit" stamp, and tables of interface properties, constraining requirements, and verification](docs/images/exmc-medical-icd.png)
+
+  *The ICD is a deterministic projection of the model and trace graph — edit the
+  model, not this document.*
 - **`generated/conformance-report.html`** — a pass/fail certificate answering
   *"does the real device data actually honor the interface the ICD describes?"*
   (Spoiler: one reading's units drifted, so it's **non-conformant** — the exact
