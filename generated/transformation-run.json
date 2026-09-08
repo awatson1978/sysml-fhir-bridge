@@ -1,0 +1,133 @@
+{
+  "transformationId": "tx-exmc-0001",
+  "timestamp": "2027-03-18T16:22:00Z",
+  "source": {
+    "sysmlProjectId": "medical-system-foundation",
+    "sysmlCommitId": "sysml-8df65f0d",
+    "elementIds": [
+      "action-perform-ultrasound",
+      "attr-doppler-velocity",
+      "attr-heart-rate",
+      "part-def-exmc-ultrasound",
+      "part-usage-exmc-us-01",
+      "port-medical-data",
+      "req-med-042",
+      "req-telemetry-014"
+    ]
+  },
+  "target": {
+    "fhirPackage": "org.example.exmc#0.4.0",
+    "resources": [
+      "ActivityDefinition/perform-ultrasound-exam",
+      "Device/ultrasound-unit01",
+      "DeviceDefinition/exmc-ultrasound-type",
+      "DeviceMetric/doppler-velocity-capability",
+      "DeviceMetric/heart-rate-metric-capability",
+      "Observation/doppler-velocity-example",
+      "Observation/heart-rate-metric-example"
+    ]
+  },
+  "ruleset": {
+    "id": "exmc-mappings",
+    "version": "1.8.2"
+  },
+  "generator": {
+    "name": "nodeonsysml",
+    "version": "0.1.0",
+    "buildDigest": "sha256:e6848e5e7dc71c578ba37e8754053c83d30242190313fbb08b4fd42d301a7c8e"
+  },
+  "artifacts": [
+    {
+      "name": "fhir/devicedefinition-exmc-ultrasound-type.json",
+      "sha256": "62faf848a0e602af7bbe51784eb192e8103d90b67f5fda72c54d50ff416a9c05"
+    },
+    {
+      "name": "fhir/device-ultrasound-unit01.json",
+      "sha256": "518fdc41890b256e0182e6b2aa7db9db2be77e941e9130a90d754ed88082a7fc"
+    },
+    {
+      "name": "fhir/devicemetric-heart-rate-metric-capability.json",
+      "sha256": "a5fb224d17af01b1d0f67401a9cca70250583834573eccfb4a35fc0d8cd3ca1a"
+    },
+    {
+      "name": "fhir/observation-heart-rate-metric-example.json",
+      "sha256": "22df30cc4fc99026e0f83e39e66dff2f977d9805f0bb000832d0c26953cd5947"
+    },
+    {
+      "name": "fhir/devicemetric-doppler-velocity-capability.json",
+      "sha256": "915731da15abd1cb04f16646d7fbc9b5ddc59f0b4accb20c229a33be7b42cc4a"
+    },
+    {
+      "name": "fhir/observation-doppler-velocity-example.json",
+      "sha256": "847e05d8a855e2766b09cab56bd3e21dfcc5aa6c8406e2accef03e3e3c4942ca"
+    },
+    {
+      "name": "fhir/activitydefinition-perform-ultrasound-exam.json",
+      "sha256": "3cec8f1a76689cd6fe411cf5529fcdae44edb8bca533c9f795dacb2ded8583c6"
+    },
+    {
+      "name": "exmc-medical-icd.md",
+      "sha256": "5118981cb74407ac047fae4e1f86bb219f153fd0be1d030e64c9b43f75702b33"
+    },
+    {
+      "name": "exmc-medical-icd.html",
+      "sha256": "efcdb2bcccd1a98a90b2d7793ebcfc411c04c764f2074d1a800862f8bf0e51ec"
+    },
+    {
+      "name": "verification-matrix.md",
+      "sha256": "e44e3b13b12559d2645f69021983921f308f887300e7650e83b956aa503f229d"
+    },
+    {
+      "name": "diagrams/requirements-trace.mmd",
+      "sha256": "1f9b113be85f8c8b4b311ba2491b0aba74b988288429eeea882988531d200fa2"
+    },
+    {
+      "name": "diagrams/requirements-trace.svg",
+      "sha256": "b674157fc0c1e2968261ddc138a6c154661544efb5edfe6240bee7e8cc5589d7"
+    },
+    {
+      "name": "diagrams/requirements-trace.puml",
+      "sha256": "7040c03791f11a801363b5674d43e7af7a4bb4665dc977e723a997f1001d754b"
+    },
+    {
+      "name": "diagrams/architecture.mmd",
+      "sha256": "3f60521408b58d535d96920b156257884de0add1ec2b7f6f078b4dd025e1ea34"
+    },
+    {
+      "name": "diagrams/architecture.svg",
+      "sha256": "be3d57b9e6b00c74a11fa1fbf2d3f02f7582eea1be004527146b1a4fd6ae2212"
+    },
+    {
+      "name": "diagrams/architecture.puml",
+      "sha256": "1041168aaed18057821871b1e4839b4c9dae5e5bd08b4d37b5347815b294e57f"
+    },
+    {
+      "name": "impact-report.json",
+      "sha256": "7c8493d877a0f9e09c6cce6f975c29dbb8f60e421f2497d428b60fa311a08c91"
+    },
+    {
+      "name": "change-proposals.json",
+      "sha256": "d49b096b76c905845df78d5586f011ca8c72ba4c9c5095913a11f79c45272f7d"
+    },
+    {
+      "name": "conformance-report.json",
+      "sha256": "a47e02df91d937d77d4c839c726c9cf4a5ddb6f021adcc8bcc53d60921236643"
+    },
+    {
+      "name": "conformance-report.html",
+      "sha256": "dc0a8ab6b9da51313ca25353f3027ba074006dec50e4fc95c6828a2c8e01b6a5"
+    },
+    {
+      "name": "fhir/bundle-trace-projection.json",
+      "sha256": "73eef87913413caf2a2c14241aa4fa0e83827dcb874dc5337778cbcc4ea7140d"
+    },
+    {
+      "name": "trace-explorer.html",
+      "sha256": "50cb669d77ba5a0136919de7e37f5439e4240673da53cac8fe5bb5108808972c"
+    },
+    {
+      "name": "trace-links.json",
+      "sha256": "c88eb8f086ec2368ec21b8dad74b7faedc971443a5b56c50fdbf65d7d7e02283"
+    }
+  ]
+}

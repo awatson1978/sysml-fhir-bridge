@@ -1,0 +1,267 @@
+{
+  "project": {
+    "projectId": "medical-system-foundation",
+    "name": "ExMC Medical System Foundation",
+    "defaultBranch": "main"
+  },
+  "commits": [
+    {
+      "commit": {
+        "projectId": "medical-system-foundation",
+        "commitId": "sysml-8df65f0d",
+        "description": "PDR baseline: ultrasound subsystem with telemetry requirement",
+        "created": "2027-03-01T12:00:00Z"
+      },
+      "elements": [
+        {
+          "elementId": "sys-medical",
+          "kind": "PartDefinition",
+          "name": "MedicalSystem",
+          "qualifiedName": "MedicalSystem",
+          "documentation": "Top-level exploration medical system."
+        },
+        {
+          "elementId": "req-med-042",
+          "kind": "RequirementUsage",
+          "name": "ProvideDiagnosticUltrasound",
+          "qualifiedName": "MedicalSystem::Requirements::ProvideDiagnosticUltrasound",
+          "ownerId": "sys-medical",
+          "documentation": "The medical system shall provide diagnostic ultrasound capability for crew health assessment.",
+          "relationships": [
+            { "type": "satisfiedBy", "targetElementId": "part-def-exmc-ultrasound" },
+            { "type": "verifiedBy", "targetElementId": "ver-case-042" }
+          ]
+        },
+        {
+          "elementId": "req-telemetry-014",
+          "kind": "RequirementUsage",
+          "name": "MedicalTelemetryBandwidth",
+          "qualifiedName": "MedicalSystem::Requirements::MedicalTelemetryBandwidth",
+          "ownerId": "sys-medical",
+          "documentation": "Clinically meaningful physiologic observations shall be transmissible within an allocated downlink budget of 50 kbit/s sustained.",
+          "relationships": [
+            { "type": "constrains", "targetElementId": "port-medical-data" }
+          ]
+        },
+        {
+          "elementId": "part-def-exmc-ultrasound",
+          "kind": "PartDefinition",
+          "name": "ExmcUltrasound",
+          "qualifiedName": "MedicalSystem::ExmcUltrasound",
+          "ownerId": "sys-medical",
+          "documentation": "Diagnostic ultrasound device type for exploration medical operations.",
+          "metadata": {
+            "medicalDeviceType": true,
+            "modelNumber": "HUS-3000",
+            "safetyClass": "IIa-equivalent"
+          }
+        },
+        {
+          "elementId": "part-usage-exmc-us-01",
+          "kind": "PartUsage",
+          "name": "ultrasoundUnit01",
+          "qualifiedName": "MedicalSystem::deployed::ultrasoundUnit01",
+          "ownerId": "sys-medical",
+          "documentation": "Deployed flight unit of the ExmcUltrasound type.",
+          "metadata": {
+            "deploymentBinding": {
+              "site": "lunar-habitat-med-bay",
+              "serialNumber": "SN-0001",
+              "missionPhase": "surface-ops"
+            }
+          },
+          "relationships": [
+            { "type": "definedBy", "targetElementId": "part-def-exmc-ultrasound" }
+          ]
+        },
+        {
+          "elementId": "attr-heart-rate",
+          "kind": "AttributeUsage",
+          "name": "heartRateMetric",
+          "qualifiedName": "MedicalSystem::ExmcUltrasound::heartRateMetric",
+          "ownerId": "part-def-exmc-ultrasound",
+          "documentation": "Heart rate derived from ultrasound doppler acquisition.",
+          "metadata": {
+            "observable": true,
+            "metricCategory": "measurement",
+            "unit": "bpm",
+            "loincHint": "8867-4"
+          }
+        },
+        {
+          "elementId": "attr-doppler-velocity",
+          "kind": "AttributeUsage",
+          "name": "dopplerVelocity",
+          "qualifiedName": "MedicalSystem::ExmcUltrasound::dopplerVelocity",
+          "ownerId": "part-def-exmc-ultrasound",
+          "documentation": "Peak doppler blood-flow velocity.",
+          "metadata": {
+            "observable": true,
+            "metricCategory": "measurement",
+            "unit": "cm/s"
+          }
+        },
+        {
+          "elementId": "port-medical-data",
+          "kind": "PortUsage",
+          "name": "medicalDataPort",
+          "qualifiedName": "MedicalSystem::ExmcUltrasound::medicalDataPort",
+          "ownerId": "part-def-exmc-ultrasound",
+          "documentation": "Interface over which clinically meaningful observations and reports leave the device.",
+          "metadata": {
+            "accepts": ["Observation", "DiagnosticReport"],
+            "transport": "store-and-forward",
+            "updateFrequency": "on clinical event",
+            "latencyClass": "non-realtime",
+            "offlineBehavior": "durable local queue, idempotent replay"
+          }
+        },
+        {
+          "elementId": "action-perform-ultrasound",
+          "kind": "ActionDefinition",
+          "name": "PerformUltrasoundExam",
+          "qualifiedName": "MedicalSystem::ExmcUltrasound::PerformUltrasoundExam",
+          "ownerId": "part-def-exmc-ultrasound",
+          "documentation": "Guided diagnostic ultrasound acquisition behavior.",
+          "metadata": {
+            "clinicalWorkflow": true
+          }
+        },
+        {
+          "elementId": "ver-case-042",
+          "kind": "ConstraintUsage",
+          "name": "UltrasoundDiagnosticWorkflowTest",
+          "qualifiedName": "MedicalSystem::Verification::UltrasoundDiagnosticWorkflowTest",
+          "ownerId": "sys-medical",
+          "documentation": "Interface and diagnostic workflow test verifying REQ-MED-042.",
+          "metadata": {
+            "verificationMethod": "demonstration"
+          }
+        }
+      ]
+    },
+    {
+      "commit": {
+        "projectId": "medical-system-foundation",
+        "commitId": "sysml-a1b2c3d4",
+        "description": "Telemetry requirement tightened to 30 kbit/s; doppler velocity metric removed pending sensor descope",
+        "previousCommitId": "sysml-8df65f0d",
+        "created": "2027-03-18T09:00:00Z"
+      },
+      "elements": [
+        {
+          "elementId": "sys-medical",
+          "kind": "PartDefinition",
+          "name": "MedicalSystem",
+          "qualifiedName": "MedicalSystem",
+          "documentation": "Top-level exploration medical system."
+        },
+        {
+          "elementId": "req-med-042",
+          "kind": "RequirementUsage",
+          "name": "ProvideDiagnosticUltrasound",
+          "qualifiedName": "MedicalSystem::Requirements::ProvideDiagnosticUltrasound",
+          "ownerId": "sys-medical",
+          "documentation": "The medical system shall provide diagnostic ultrasound capability for crew health assessment.",
+          "relationships": [
+            { "type": "satisfiedBy", "targetElementId": "part-def-exmc-ultrasound" },
+            { "type": "verifiedBy", "targetElementId": "ver-case-042" }
+          ]
+        },
+        {
+          "elementId": "req-telemetry-014",
+          "kind": "RequirementUsage",
+          "name": "MedicalTelemetryBandwidth",
+          "qualifiedName": "MedicalSystem::Requirements::MedicalTelemetryBandwidth",
+          "ownerId": "sys-medical",
+          "documentation": "Clinically meaningful physiologic observations shall be transmissible within an allocated downlink budget of 30 kbit/s sustained.",
+          "relationships": [
+            { "type": "constrains", "targetElementId": "port-medical-data" }
+          ]
+        },
+        {
+          "elementId": "part-def-exmc-ultrasound",
+          "kind": "PartDefinition",
+          "name": "ExmcUltrasound",
+          "qualifiedName": "MedicalSystem::ExmcUltrasound",
+          "ownerId": "sys-medical",
+          "documentation": "Diagnostic ultrasound device type for exploration medical operations.",
+          "metadata": {
+            "medicalDeviceType": true,
+            "modelNumber": "HUS-3000",
+            "safetyClass": "IIa-equivalent"
+          }
+        },
+        {
+          "elementId": "part-usage-exmc-us-01",
+          "kind": "PartUsage",
+          "name": "ultrasoundUnit01",
+          "qualifiedName": "MedicalSystem::deployed::ultrasoundUnit01",
+          "ownerId": "sys-medical",
+          "documentation": "Deployed flight unit of the ExmcUltrasound type.",
+          "metadata": {
+            "deploymentBinding": {
+              "site": "lunar-habitat-med-bay",
+              "serialNumber": "SN-0001",
+              "missionPhase": "surface-ops"
+            }
+          },
+          "relationships": [
+            { "type": "definedBy", "targetElementId": "part-def-exmc-ultrasound" }
+          ]
+        },
+        {
+          "elementId": "attr-heart-rate",
+          "kind": "AttributeUsage",
+          "name": "heartRateMetric",
+          "qualifiedName": "MedicalSystem::ExmcUltrasound::heartRateMetric",
+          "ownerId": "part-def-exmc-ultrasound",
+          "documentation": "Heart rate derived from ultrasound doppler acquisition.",
+          "metadata": {
+            "observable": true,
+            "metricCategory": "measurement",
+            "unit": "bpm",
+            "loincHint": "8867-4"
+          }
+        },
+        {
+          "elementId": "port-medical-data",
+          "kind": "PortUsage",
+          "name": "medicalDataPort",
+          "qualifiedName": "MedicalSystem::ExmcUltrasound::medicalDataPort",
+          "ownerId": "part-def-exmc-ultrasound",
+          "documentation": "Interface over which clinically meaningful observations and reports leave the device.",
+          "metadata": {
+            "accepts": ["Observation", "DiagnosticReport"],
+            "transport": "store-and-forward",
+            "updateFrequency": "on clinical event",
+            "latencyClass": "non-realtime",
+            "offlineBehavior": "durable local queue, idempotent replay"
+          }
+        },
+        {
+          "elementId": "action-perform-ultrasound",
+          "kind": "ActionDefinition",
+          "name": "PerformUltrasoundExam",
+          "qualifiedName": "MedicalSystem::ExmcUltrasound::PerformUltrasoundExam",
+          "ownerId": "part-def-exmc-ultrasound",
+          "documentation": "Guided diagnostic ultrasound acquisition behavior.",
+          "metadata": {
+            "clinicalWorkflow": true
+          }
+        },
+        {
+          "elementId": "ver-case-042",
+          "kind": "ConstraintUsage",
+          "name": "UltrasoundDiagnosticWorkflowTest",
+          "qualifiedName": "MedicalSystem::Verification::UltrasoundDiagnosticWorkflowTest",
+          "ownerId": "sys-medical",
+          "documentation": "Interface and diagnostic workflow test verifying REQ-MED-042.",
+          "metadata": {
+            "verificationMethod": "demonstration"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "resourceType": "Device",
+  "id": "ultrasound-unit01",
+  "status": "active",
+  "definition": {
+    "reference": "DeviceDefinition/exmc-ultrasound-type"
+  },
+  "modelNumber": "HUS-3000",
+  "serialNumber": "SN-0001",
+  "note": [
+    {
+      "text": "deployment site: lunar-habitat-med-bay"
+    }
+  ]
+}

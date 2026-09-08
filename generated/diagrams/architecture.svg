@@ -1,0 +1,129 @@
+<svg version="1.1" baseProfile="full" width="1556.9" height="172.0" viewBox="0 0 1556.9473684210527 172" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+	<desc >#direction: down
+	#spacing: 40
+	#padding: 10
+	#.sysml: fill=#dbe9ff
+	#.trace: fill=#fff3d6
+	#.fhir: fill=#dcf5dc
+	#.artifact: fill=#eeeeee
+	[&lt;artifact&gt; Generated ICD / verification docs]
+	[&lt;fhir&gt; Medical Edge Gateway]
+	[&lt;fhir&gt; FHIR Gateway]
+	[&lt;artifact&gt; DICOM / artifact store]
+	[&lt;trace&gt; NodeOnSysML kernel]
+	[&lt;sysml&gt; SysML v2 Model Service]
+	[&lt;trace&gt; Trace graph (versioned TraceLinks)]
+	[&lt;fhir&gt; Medical Edge Gateway]- Observations / Reports -&gt;[&lt;fhir&gt; FHIR Gateway]
+	[&lt;fhir&gt; Medical Edge Gateway]- DICOM / raw artifacts -&gt;[&lt;artifact&gt; DICOM / artifact store]
+	[&lt;fhir&gt; FHIR Gateway]- store-and-forward sync -&gt;[&lt;fhir&gt; Medical Edge Gateway]
+	[&lt;trace&gt; NodeOnSysML kernel]- deterministic docgen -&gt;[&lt;artifact&gt; Generated ICD / verification docs]
+	[&lt;trace&gt; NodeOnSysML kernel]- FHIR REST -&gt;[&lt;fhir&gt; FHIR Gateway]
+	[&lt;trace&gt; NodeOnSysML kernel]- artifact metadata -&gt;[&lt;artifact&gt; DICOM / artifact store]
+	[&lt;trace&gt; NodeOnSysML kernel]- Systems Modeling API -&gt;[&lt;sysml&gt; SysML v2 Model Service]
+	[&lt;trace&gt; NodeOnSysML kernel]- versioned TraceLinks -&gt;[&lt;trace&gt; Trace graph (versioned TraceLinks)]
+	</desc>
+	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="bold" font-style="normal">
+		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+			<g stroke="transparent" fill="transparent">
+				<rect x="0.0" y="0.0" height="172.0" width="1556.9" stroke="none"></rect>
+			</g>
+			<g transform="translate(175.44736842105263, 10)" fill="#33322E">
+				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+					<text x="-165.4" y="66.0" stroke="none">Observations / Reports -&gt;</text>
+					<path d="M68.6 36.0 L26.5 56 L47.55263157894737 76 L47.6 76.0 " fill="none"></path>
+					<text x="239.8" y="66.0" stroke="none">DICOM / raw artifacts -&gt;</text>
+					<path d="M144.8 36.0 L187.25 56 L229.75 76 L229.8 76.0 " fill="none"></path>
+					<text x="135.8" y="58.0" stroke="none">store-and-forward sync -&gt;</text>
+					<path d="M104.8 76.0 L147.25 56 L125.80263157894737 36 L125.8 36.0 " fill="none"></path>
+					<text x="554.0" y="66.0" stroke="none">deterministic docgen -&gt;</text>
+					<path d="M533.5 36.0 L544 56 L544 76 L544.0 76.0 " fill="none"></path>
+					<text x="-33.2" y="66.0" stroke="none">FHIR REST -&gt;</text>
+					<path d="M428.0 26.8 L107.25 56 L85.80263157894737 76 L85.8 76.0 " fill="none"></path>
+					<text x="150.4" y="66.0" stroke="none">artifact metadata -&gt;</text>
+					<path d="M449.2 36.0 L366 56 L314.42105263157896 76 L314.4 76.0 " fill="none"></path>
+					<text x="842.0" y="66.0" stroke="none">Systems Modeling API -&gt;</text>
+					<path d="M620.0 29.8 L832 56 L832 76 L832.0 76.0 " fill="none"></path>
+					<text x="1140.5" y="66.0" stroke="none">versioned TraceLinks -&gt;</text>
+					<path d="M620.0 24.0 L1130.5 56 L1130.5 76 L1130.5 76.0 " fill="none"></path>
+					<g data-name="Generated ICD / verification docs">
+						<g fill="#eeeeee" stroke="#33322E" data-name="Generated ICD / verification docs">
+							<rect x="403.0" y="76.0" height="36.0" width="282.0" data-name="Generated ICD / verification docs"></rect>
+						</g>
+						<g transform="translate(403, 76)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Generated ICD / verification docs" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="Generated ICD / verification docs" data-compartment="0">
+								<text x="131.0" y="14.1" stroke="none" text-anchor="middle" data-name="Generated ICD / verification docs" data-compartment="0">Generated ICD / verification docs</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Medical Edge Gateway">
+						<g fill="#dcf5dc" stroke="#33322E" data-name="Medical Edge Gateway">
+							<rect x="6.0" y="0.0" height="36.0" width="201.0" data-name="Medical Edge Gateway"></rect>
+						</g>
+						<g transform="translate(6, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Medical Edge Gateway" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="Medical Edge Gateway" data-compartment="0">
+								<text x="90.5" y="14.1" stroke="none" text-anchor="middle" data-name="Medical Edge Gateway" data-compartment="0">Medical Edge Gateway</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="FHIR Gateway">
+						<g fill="#dcf5dc" stroke="#33322E" data-name="FHIR Gateway">
+							<rect x="0.0" y="76.0" height="36.0" width="133.0" data-name="FHIR Gateway"></rect>
+						</g>
+						<g transform="translate(0, 76)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="FHIR Gateway" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="FHIR Gateway" data-compartment="0">
+								<text x="56.5" y="14.1" stroke="none" text-anchor="middle" data-name="FHIR Gateway" data-compartment="0">FHIR Gateway</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="DICOM / artifact store">
+						<g fill="#eeeeee" stroke="#33322E" data-name="DICOM / artifact store">
+							<rect x="173.0" y="76.0" height="36.0" width="190.0" data-name="DICOM / artifact store"></rect>
+						</g>
+						<g transform="translate(173, 76)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DICOM / artifact store" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="DICOM / artifact store" data-compartment="0">
+								<text x="85.0" y="14.1" stroke="none" text-anchor="middle" data-name="DICOM / artifact store" data-compartment="0">DICOM / artifact store</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="NodeOnSysML kernel">
+						<g fill="#fff3d6" stroke="#33322E" data-name="NodeOnSysML kernel">
+							<rect x="428.0" y="0.0" height="36.0" width="192.0" data-name="NodeOnSysML kernel"></rect>
+						</g>
+						<g transform="translate(428, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="NodeOnSysML kernel" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="NodeOnSysML kernel" data-compartment="0">
+								<text x="86.0" y="14.1" stroke="none" text-anchor="middle" data-name="NodeOnSysML kernel" data-compartment="0">NodeOnSysML kernel</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="SysML v2 Model Service">
+						<g fill="#dbe9ff" stroke="#33322E" data-name="SysML v2 Model Service">
+							<rect x="725.0" y="76.0" height="36.0" width="214.0" data-name="SysML v2 Model Service"></rect>
+						</g>
+						<g transform="translate(725, 76)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="SysML v2 Model Service" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="SysML v2 Model Service" data-compartment="0">
+								<text x="97.0" y="14.1" stroke="none" text-anchor="middle" data-name="SysML v2 Model Service" data-compartment="0">SysML v2 Model Service</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Trace graph (versioned TraceLinks)">
+						<g fill="#fff3d6" stroke="#33322E" data-name="Trace graph (versioned TraceLinks)">
+							<rect x="979.0" y="76.0" height="36.0" width="303.0" data-name="Trace graph (versioned TraceLinks)"></rect>
+						</g>
+						<g transform="translate(979, 76)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Trace graph (versioned TraceLinks)" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="Trace graph (versioned TraceLinks)" data-compartment="0">
+								<text x="141.5" y="14.1" stroke="none" text-anchor="middle" data-name="Trace graph (versioned TraceLinks)" data-compartment="0">Trace graph (versioned TraceLinks)</text>
+								
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

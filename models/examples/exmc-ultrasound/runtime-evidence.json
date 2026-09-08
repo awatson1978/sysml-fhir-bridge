@@ -1,0 +1,32 @@
+{
+  "description": "Simulated runtime clinical evidence returned from the deployed ExMC ultrasound unit, for the learning-loop importer. De-identified: coded shells only, no PHI.",
+  "observations": [
+    {
+      "resourceType": "Observation",
+      "id": "obs-runtime-hr-01",
+      "status": "final",
+      "code": { "coding": [{ "system": "http://loinc.org", "code": "8867-4", "display": "Heart rate" }] },
+      "device": { "reference": "Device/ultrasound-unit01" },
+      "valueQuantity": { "value": 74, "unit": "bpm", "system": "http://unitsofmeasure.org", "code": "/min" },
+      "effectiveDateTime": "2027-04-02T09:14:00Z"
+    },
+    {
+      "resourceType": "Observation",
+      "id": "obs-runtime-spo2-01",
+      "status": "final",
+      "code": { "coding": [{ "system": "http://loinc.org", "code": "2708-6", "display": "Oxygen saturation" }] },
+      "device": { "reference": "Device/ultrasound-unit01" },
+      "valueQuantity": { "value": 97, "unit": "%", "system": "http://unitsofmeasure.org", "code": "%" },
+      "effectiveDateTime": "2027-04-02T09:14:05Z"
+    },
+    {
+      "resourceType": "Observation",
+      "id": "obs-runtime-hr-drift-01",
+      "status": "final",
+      "code": { "coding": [{ "system": "http://loinc.org", "code": "8867-4", "display": "Heart rate" }] },
+      "device": { "reference": "Device/ultrasound-unit01" },
+      "valueQuantity": { "value": 1.23, "unit": "Hz", "system": "http://unitsofmeasure.org", "code": "Hz" },
+      "effectiveDateTime": "2027-04-02T09:15:00Z"
+    }
+  ]
+}

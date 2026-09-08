@@ -1,0 +1,71 @@
+flowchart TD
+  action_perform_ultrasound["PerformUltrasoundExam
+(ActionDefinition)"]
+  class action_perform_ultrasound sysml
+  attr_doppler_velocity["dopplerVelocity
+(AttributeUsage)"]
+  class attr_doppler_velocity sysml
+  attr_heart_rate["heartRateMetric
+(AttributeUsage)"]
+  class attr_heart_rate sysml
+  ext_icd_contract["icd-contract"]
+  class ext_icd_contract artifact
+  fhir_ActivityDefinition_perform_ultrasound_exam["ActivityDefinition/perform-ultrasound-exam"]
+  class fhir_ActivityDefinition_perform_ultrasound_exam fhir
+  fhir_Device_ultrasound_unit01["Device/ultrasound-unit01"]
+  class fhir_Device_ultrasound_unit01 fhir
+  fhir_DeviceDefinition_exmc_ultrasound_type["DeviceDefinition/exmc-ultrasound-type"]
+  class fhir_DeviceDefinition_exmc_ultrasound_type fhir
+  fhir_DeviceMetric_doppler_velocity_capability["DeviceMetric/doppler-velocity-capability"]
+  class fhir_DeviceMetric_doppler_velocity_capability fhir
+  fhir_DeviceMetric_heart_rate_metric_capability["DeviceMetric/heart-rate-metric-capability"]
+  class fhir_DeviceMetric_heart_rate_metric_capability fhir
+  fhir_exmc_physiology_observation["profile exmc-physiology-observation
+v0.4.0"]
+  class fhir_exmc_physiology_observation fhir
+  fhir_Observation_doppler_velocity_example["Observation/doppler-velocity-example"]
+  class fhir_Observation_doppler_velocity_example fhir
+  fhir_Observation_heart_rate_metric_example["Observation/heart-rate-metric-example"]
+  class fhir_Observation_heart_rate_metric_example fhir
+  part_def_exmc_ultrasound["ExmcUltrasound
+(PartDefinition)"]
+  class part_def_exmc_ultrasound sysml
+  part_usage_exmc_us_01["ultrasoundUnit01
+(PartUsage)"]
+  class part_usage_exmc_us_01 sysml
+  port_medical_data["medicalDataPort
+(PortUsage)"]
+  class port_medical_data sysml
+  req_med_042["ProvideDiagnosticUltrasound
+(RequirementUsage)"]
+  class req_med_042 sysml
+  req_telemetry_014["MedicalTelemetryBandwidth
+(RequirementUsage)"]
+  class req_telemetry_014 sysml
+  ver_case_042["UltrasoundDiagnosticWorkflowTest
+(ConstraintUsage)"]
+  class ver_case_042 sysml
+  action_perform_ultrasound -->|operationalizes [valid]| fhir_ActivityDefinition_perform_ultrasound_exam
+  attr_doppler_velocity -->|realizes [valid]| fhir_DeviceMetric_doppler_velocity_capability
+  attr_doppler_velocity -->|emits [valid]| fhir_exmc_physiology_observation
+  attr_doppler_velocity -->|emits [valid]| fhir_Observation_doppler_velocity_example
+  attr_heart_rate -->|realizes [valid]| fhir_DeviceMetric_heart_rate_metric_capability
+  attr_heart_rate -->|emits [valid]| fhir_exmc_physiology_observation
+  attr_heart_rate -->|emits [valid]| fhir_Observation_heart_rate_metric_example
+  part_def_exmc_ultrasound -->|owns| action_perform_ultrasound
+  part_def_exmc_ultrasound -->|owns| attr_doppler_velocity
+  part_def_exmc_ultrasound -->|owns| attr_heart_rate
+  part_def_exmc_ultrasound -->|documentedBy [valid]| fhir_DeviceDefinition_exmc_ultrasound_type
+  part_def_exmc_ultrasound -->|owns| port_medical_data
+  part_usage_exmc_us_01 -->|operationalizes [valid]| fhir_Device_ultrasound_unit01
+  part_usage_exmc_us_01 -->|definedBy| part_def_exmc_ultrasound
+  port_medical_data -->|documentedBy [valid]| ext_icd_contract
+  req_med_042 -->|constrains [valid]| fhir_exmc_physiology_observation
+  req_med_042 -->|satisfiedBy| part_def_exmc_ultrasound
+  req_med_042 -->|verifiedBy| ver_case_042
+  req_telemetry_014 -->|constrains [valid]| fhir_exmc_physiology_observation
+  req_telemetry_014 -->|constrains| port_medical_data
+  classDef sysml fill:#dbe9ff,stroke:#3b6db3
+  classDef trace fill:#fff3d6,stroke:#b3923b
+  classDef fhir fill:#dcf5dc,stroke:#3f9c3f
+  classDef artifact fill:#eeeeee,stroke:#888888

@@ -1,0 +1,9 @@
+id: org.example.exmc
+canonical: https://example.org/fhir/exmc
+name: ExmcMedicalInterfaces
+title: ExMC Medical Interface Profiles
+status: draft
+version: 0.4.0
+fhirVersion: 5.0.0
+copyrightYear: 2027+
+releaseLabel: ci-build

@@ -1,0 +1,14 @@
+{
+  "name": "@nodeonsysml/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/main.ts",
+  "dependencies": {
+    "@nodeonsysml/model-core": "0.1.0",
+    "@nodeonsysml/sysml-v2-client": "0.1.0",
+    "@nodeonsysml/fhir-adapter": "0.1.0",
+    "@nodeonsysml/trace-engine": "0.1.0",
+    "@nodeonsysml/mapping-engine": "0.1.0"
+  }
+}

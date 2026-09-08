@@ -1,0 +1,84 @@
+{
+  "interfaceId": "port-medical-data",
+  "interfaceName": "medicalDataPort",
+  "baselineId": "exmc-pdr-2027.03",
+  "bundleId": "exmc-runtime-2027-04-02",
+  "checkedAt": "2027-04-02T09:20:00Z",
+  "profile": {
+    "canonical": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+    "version": "0.4.0",
+    "fhirVersion": "5.0.0"
+  },
+  "fhirProfileValidation": "deferred-to-hl7-validator",
+  "checks": [
+    {
+      "check": "permitted-payload",
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-hr-01",
+      "status": "pass",
+      "detail": "Observation is a permitted payload on medicalDataPort."
+    },
+    {
+      "check": "terminology-binding",
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-hr-01",
+      "status": "pass",
+      "detail": "code system http://loinc.org is bound by the interface."
+    },
+    {
+      "check": "unit-conformance",
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-hr-01",
+      "status": "pass",
+      "detail": "UCUM /min matches the SysML-modeled unit for 8867-4."
+    },
+    {
+      "check": "permitted-payload",
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-spo2-01",
+      "status": "pass",
+      "detail": "Observation is a permitted payload on medicalDataPort."
+    },
+    {
+      "check": "terminology-binding",
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-spo2-01",
+      "status": "pass",
+      "detail": "code system http://loinc.org is bound by the interface."
+    },
+    {
+      "check": "unit-conformance",
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-spo2-01",
+      "status": "not-applicable",
+      "detail": "no modeled observable for code 2708-6; unit not constrained by this interface."
+    },
+    {
+      "check": "permitted-payload",
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-hr-drift-01",
+      "status": "pass",
+      "detail": "Observation is a permitted payload on medicalDataPort."
+    },
+    {
+      "check": "terminology-binding",
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-hr-drift-01",
+      "status": "pass",
+      "detail": "code system http://loinc.org is bound by the interface."
+    },
+    {
+      "check": "unit-conformance",
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-hr-drift-01",
+      "status": "fail",
+      "detail": "UCUM Hz violates the SysML-modeled unit /min for 8867-4."
+    }
+  ],
+  "summary": {
+    "pass": 7,
+    "fail": 1,
+    "notApplicable": 1
+  },
+  "verdict": "non-conformant"
+}

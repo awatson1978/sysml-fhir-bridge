@@ -1,0 +1,72 @@
+{
+  "importedAt": "2027-04-02T09:20:00Z",
+  "baseline": "exmc-pdr-2027.03",
+  "matches": [
+    {
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-hr-01",
+      "matchedElementId": "attr-heart-rate",
+      "observableName": "heartRateMetric",
+      "confidence": "code-exact"
+    },
+    {
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-hr-drift-01",
+      "matchedElementId": "attr-heart-rate",
+      "observableName": "heartRateMetric",
+      "confidence": "code-exact"
+    }
+  ],
+  "gaps": [
+    {
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-spo2-01",
+      "code": "2708-6",
+      "system": "http://loinc.org",
+      "reason": "NO_DESIGN_COVERAGE"
+    }
+  ],
+  "violations": [
+    {
+      "resourceType": "Observation",
+      "resourceId": "obs-runtime-hr-drift-01",
+      "matchedElementId": "attr-heart-rate",
+      "code": "UNIT_DRIFT",
+      "detail": "Model declares bpm (UCUM /min); runtime reports UCUM Hz."
+    }
+  ],
+  "proposals": [
+    {
+      "id": "proposal-a052f5856c4d",
+      "kind": "new-observable",
+      "title": "Model a new observable for clinical code 2708-6",
+      "rationale": "Runtime Observation obs-runtime-spo2-01 carries code 2708-6 (http://loinc.org) with no corresponding modeled observable. Operations are collecting data the design does not predict.",
+      "evidence": [
+        {
+          "resourceType": "Observation",
+          "resourceId": "obs-runtime-spo2-01",
+          "code": "2708-6",
+          "system": "http://loinc.org"
+        }
+      ],
+      "proposedAt": "2027-04-02T09:20:00Z",
+      "status": "proposed"
+    },
+    {
+      "id": "proposal-695ba6c53747",
+      "kind": "requirement-revision",
+      "title": "Reconcile unit drift on heartRateMetric",
+      "rationale": "Runtime Observation obs-runtime-hr-drift-01 reports UCUM Hz, but MedicalSystem::ExmcUltrasound::heartRateMetric declares bpm (UCUM /min). Either the device changed or the model is wrong; a human must decide.",
+      "evidence": [
+        {
+          "resourceType": "Observation",
+          "resourceId": "obs-runtime-hr-drift-01",
+          "code": "8867-4"
+        }
+      ],
+      "proposedAt": "2027-04-02T09:20:00Z",
+      "status": "proposed",
+      "targetElementId": "attr-heart-rate"
+    }
+  ]
+}

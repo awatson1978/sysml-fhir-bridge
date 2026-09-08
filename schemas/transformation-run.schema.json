@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nodeonsysml.example/schemas/transformation-run.schema.json",
+  "title": "TransformationRun",
+  "description": "Provenance record for one SysML->FHIR transformation run.",
+  "type": "object",
+  "properties": {
+    "transformationId": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string" },
+    "source": {
+      "type": "object",
+      "properties": {
+        "sysmlProjectId": { "type": "string" },
+        "sysmlCommitId": { "type": "string" },
+        "elementIds": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["sysmlProjectId", "sysmlCommitId", "elementIds"],
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "fhirPackage": { "type": "string" },
+        "resources": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["fhirPackage", "resources"],
+      "additionalProperties": false
+    },
+    "ruleset": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "version": { "type": "string" }
+      },
+      "required": ["id", "version"],
+      "additionalProperties": false
+    },
+    "generator": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "buildDigest": { "type": "string" }
+      },
+      "required": ["name", "version", "buildDigest"],
+      "additionalProperties": false
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "sha256": { "type": "string" }
+        },
+        "required": ["name", "sha256"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "transformationId",
+    "timestamp",
+    "source",
+    "target",
+    "ruleset",
+    "generator",
+    "artifacts"
+  ],
+  "additionalProperties": false
+}

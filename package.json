@@ -1,0 +1,23 @@
+{
+  "name": "nodeonsysml",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "NodeOnSysML: a SysML v2 / HL7 FHIR digital-thread kernel for exploration medical systems",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test packages/*/test/*.test.ts tests/acceptance/*.test.ts",
+    "demo": "node --import tsx apps/demo/src/main.ts",
+    "api": "node --import tsx apps/api/src/main.ts",
+    "regenerate": "npm run demo"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

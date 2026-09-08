@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExMC Medical Data Interface — Interface Control Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #f7f5f0;
+  --ink: #1c1a17;
+  --ink-soft: #57524a;
+  --rule: #c9c3b6;
+  --rule-dark: #8f8878;
+  --stamp: #b3341f;
+  --accent: #1f4e8c;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+html { background: #dedbd3; }
+body {
+  font-family: var(--serif);
+  color: var(--ink);
+  background:
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(28,26,23,.025) 31px 32px),
+    var(--paper);
+  max-width: 62rem;
+  margin: 2.5rem auto 5rem;
+  padding: 3.5rem 4rem 4rem;
+  border: 1px solid var(--rule-dark);
+  box-shadow: 0 2px 0 rgba(28,26,23,.18), 0 18px 40px rgba(28,26,23,.22);
+  line-height: 1.55;
+  font-size: 15px;
+}
+header.titleblock {
+  border: 2px solid var(--ink);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.titleblock .doc-org {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  padding: .55rem .9rem;
+  border-bottom: 2px solid var(--ink);
+  display: flex;
+  justify-content: space-between;
+  color: var(--ink-soft);
+}
+.titleblock h1 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.72rem;
+  line-height: 1.25;
+  margin: 0;
+  padding: 1.1rem .9rem 1.2rem;
+  border-bottom: 2px solid var(--ink);
+}
+.titleblock .meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-family: var(--mono);
+  font-size: 11.5px;
+}
+.titleblock .meta > div {
+  padding: .5rem .9rem .6rem;
+  border-right: 1px solid var(--rule-dark);
+}
+.titleblock .meta > div:nth-child(4n) { border-right: none; }
+.titleblock .meta > div:nth-child(-n+4) { border-bottom: 1px solid var(--rule-dark); }
+.titleblock .meta dt {
+  font-size: 9.5px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 .15rem;
+}
+.titleblock .meta dd { margin: 0; word-break: break-all; }
+.stamp {
+  position: absolute;
+  top: -1.1rem;
+  right: 1.4rem;
+  transform: rotate(-3deg);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--stamp);
+  border: 2px solid var(--stamp);
+  padding: .38rem .7rem;
+  background: var(--paper);
+  box-shadow: 0 1px 0 rgba(28,26,23,.15);
+}
+h2 {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: .4rem;
+  margin: 2.8rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+h2 .secno { color: var(--stamp); margin-right: .8rem; }
+h2 .anchor { color: var(--rule-dark); font-size: 10px; letter-spacing: .1em; }
+h3 {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 1.8rem 0 .6rem;
+}
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td {
+  border: 1px solid var(--rule);
+  padding: .42rem .65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: rgba(28,26,23,.045);
+  color: var(--ink-soft);
+  width: 15rem;
+}
+thead th { width: auto; }
+code {
+  font-family: var(--mono);
+  font-size: .86em;
+  background: rgba(31,78,140,.07);
+  color: var(--accent);
+  padding: .05em .3em;
+  word-break: break-all;
+}
+.req { margin: .5rem 0 .5rem; padding-left: 1rem; border-left: 3px solid var(--accent); }
+.req .req-id { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: .08em; }
+.req p { margin: .2rem 0 0; }
+.pass { color: #1c6b34; font-weight: 600; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+.fail { color: var(--stamp); font-weight: 600; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+footer {
+  margin-top: 3.5rem;
+  padding-top: .8rem;
+  border-top: 1px solid var(--rule-dark);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+}
+@media print { html { background: #fff; } body { box-shadow: none; border: none; margin: 0; } }
+
+</style>
+</head>
+<body>
+<header class="titleblock">
+<div class="stamp">Generated from model — do not edit</div>
+<div class="doc-org"><span>NodeOnSysML digital-thread kernel</span><span>Interface Control Document</span></div>
+<h1>ExMC Medical Data Interface — Interface Control Document</h1>
+<dl class="meta">
+<div><dt>Baseline</dt><dd>exmc-pdr-2027.03</dd></div>
+<div><dt>SysML commit</dt><dd>sysml-8df65f0d</dd></div>
+<div><dt>FHIR package</dt><dd>org.example.exmc#0.4.0 (FHIR 5.0.0)</dd></div>
+<div><dt>Mapping rules</dt><dd>1.8.2</dd></div>
+<div><dt>SysML project</dt><dd>medical-system-foundation</dd></div>
+<div><dt>Doc templates</dt><dd>3.2.0</dd></div>
+<div><dt>Generator</dt><dd>nodeonsysml 0.1.0</dd></div>
+<div><dt>Generated at</dt><dd>2027-03-18T16:22:00Z</dd></div>
+</dl>
+</header>
+<h2 id="medical-data-port"><span><span class="secno">1.0</span>Interface — medicalDataPort</span><span class="anchor">port-medical-data</span></h2>
+<p>Source element <code>MedicalSystem::ExmcUltrasound::medicalDataPort</code>, owned by <strong>ExmcUltrasound</strong>.</p>
+<table><tbody>
+<tr><th>Connected systems</th><td>Local medical record (xEHR), Store-and-forward comm link</td></tr>
+<tr><th>Direction</th><td>outbound (device → medical data system)</td></tr>
+<tr><th>Payload / resource types</th><td><code>Observation</code> <code>DiagnosticReport</code></td></tr>
+<tr><th>FHIR profiles</th><td><code>https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation</code> v0.4.0 (FHIR 5.0.0)</td></tr>
+<tr><th>Terminology bindings</th><td><code>http://loinc.org</code> — observation codes where clinically standard<br><code>http://unitsofmeasure.org</code> — all quantities carry UCUM codes</td></tr>
+<tr><th>Cardinalities</th><td>1 modeled metric capability -&gt; 0..* DeviceMetric<br>1 modeled observable -&gt; 1 profile definition; 0..N runtime Observations</td></tr>
+<tr><th>Units</th><td>bpm → UCUM <code>/min</code><br>cm/s → UCUM <code>cm/s</code></td></tr>
+<tr><th>Update frequency / volume</th><td>on clinical event</td></tr>
+<tr><th>Latency / priority</th><td>non-realtime</td></tr>
+<tr><th>Offline behavior</th><td>durable local queue, idempotent replay</td></tr>
+<tr><th>Buffering / retry</th><td>bounded durable queue; urgent clinical events precede bulk archival transfer</td></tr>
+<tr><th>Security / authorization</th><td>engineering API: OIDC/OAuth2; clinical API: SMART-on-FHIR where applicable; edge: locally enforceable policy with cached trust</td></tr>
+<tr><th>Error semantics</th><td>explicit mapping warnings (NO_DIRECT_MAPPING); no silent unit or cardinality coercion; conflicts reconciled via FHIR version/ETag semantics</td></tr>
+<tr><th>Data provenance</th><td>TransformationRun tx-exmc-0001, ruleset exmc-mappings@1.8.2, generator nodeonsysml@0.1.0</td></tr>
+<tr><th>Power / compute / network</th><td>store-and-forward under the downlink budget allocated by MedicalTelemetryBandwidth (req-telemetry-014); no continuous-connectivity assumption</td></tr>
+</tbody></table>
+<h3>1.1 Constraining requirements</h3>
+<div class="req"><span class="req-id">req-telemetry-014 — MedicalTelemetryBandwidth</span><p>Clinically meaningful physiologic observations shall be transmissible within an allocated downlink budget of 50 kbit/s sustained.</p></div>
+<h3>1.2 Verification</h3>
+<table><thead><tr><th>Case</th><th>Method</th><th>Status</th><th>Evidence</th></tr></thead><tbody>
+<tr><td>UltrasoundDiagnosticWorkflowTest<br><code>VER-042</code></td><td>demonstration</td><td><span class="pass">pass</span></td><td>tests/acceptance/vertical-slice.test.ts<br>generated/fhir/observation-heart-rate-metric-example.json <code>22df30cc4fc99026…</code></td></tr>
+</tbody></table>
+<h2><span><span class="secno">2.0</span>Change history</span></h2>
+<table><thead><tr><th>SysML commit</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>sysml-8df65f0d</code></td><td>PDR baseline: ultrasound subsystem with telemetry requirement</td></tr>
+<tr><td><code>sysml-a1b2c3d4</code></td><td>Telemetry requirement tightened to 30 kbit/s; doppler velocity metric removed pending sensor descope</td></tr>
+</tbody></table>
+<footer><span>Deterministic projection of baseline exmc-pdr-2027.03</span><span>nodeonsysml 0.1.0</span></footer>
+</body>
+</html>

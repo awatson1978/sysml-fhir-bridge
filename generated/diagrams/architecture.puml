@@ -1,0 +1,18 @@
+@startuml
+title NodeOnSysML reference architecture
+component "Generated ICD / verification docs" as docs
+component "Medical Edge Gateway" as edge
+component "FHIR Gateway" as fhir
+component "DICOM / artifact store" as img
+database "NodeOnSysML kernel" as nos
+component "SysML v2 Model Service" as sys
+database "Trace graph (versioned TraceLinks)" as trace
+edge --> fhir : Observations / Reports
+edge --> img : DICOM / raw artifacts
+fhir --> edge : store-and-forward sync
+nos --> docs : deterministic docgen
+nos --> fhir : FHIR REST
+nos --> img : artifact metadata
+nos --> sys : Systems Modeling API
+nos --> trace : versioned TraceLinks
+@enduml

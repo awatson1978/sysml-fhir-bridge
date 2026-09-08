@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nodeonsysml.example/schemas/trace-link.schema.json",
+  "title": "TraceLink",
+  "description": "First-class, versioned cross-domain relationship between a SysML source and a FHIR or external target.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "source": { "$ref": "#/$defs/sysmlRef" },
+    "relationship": {
+      "enum": [
+        "realizes",
+        "satisfies",
+        "constrains",
+        "emits",
+        "consumes",
+        "operationalizes",
+        "verifiedBy",
+        "evidenceFor",
+        "documentedBy",
+        "derivedFrom"
+      ]
+    },
+    "target": {
+      "oneOf": [{ "$ref": "#/$defs/fhirRef" }, { "$ref": "#/$defs/externalRef" }]
+    },
+    "mappingRuleId": { "type": "string", "minLength": 1 },
+    "mappingRuleVersion": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["draft", "valid", "stale", "invalid", "waived"] },
+    "statusReason": { "type": "string" },
+    "semanticConfidence": { "enum": ["exact", "strong", "contextual"] },
+    "createdAt": { "type": "string" },
+    "createdBy": { "type": "string" },
+    "sourceHash": { "type": "string" },
+    "targetHash": { "type": "string" },
+    "provenanceId": { "type": "string" },
+    "supersedes": { "type": "string" }
+  },
+  "required": [
+    "id",
+    "source",
+    "relationship",
+    "target",
+    "mappingRuleId",
+    "mappingRuleVersion",
+    "status",
+    "createdAt",
+    "createdBy",
+    "provenanceId"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "sysmlRef": {
+      "type": "object",
+      "properties": {
+        "standard": { "const": "sysml-v2" },
+        "projectId": { "type": "string", "minLength": 1 },
+        "commitId": { "type": "string", "minLength": 1 },
+        "elementId": { "type": "string", "minLength": 1 },
+        "qualifiedName": { "type": "string" }
+      },
+      "required": ["standard", "projectId", "commitId", "elementId"],
+      "additionalProperties": false
+    },
+    "fhirRef": {
+      "type": "object",
+      "properties": {
+        "standard": { "const": "fhir" },
+        "fhirVersion": { "type": "string", "minLength": 1 },
+        "canonical": { "type": "string" },
+        "profileVersion": { "type": "string" },
+        "resourceType": { "type": "string" },
+        "logicalId": { "type": "string" },
+        "versionId": { "type": "string" }
+      },
+      "required": ["standard", "fhirVersion"],
+      "additionalProperties": false
+    },
+    "externalRef": {
+      "type": "object",
+      "properties": {
+        "standard": { "const": "external" },
+        "kind": { "type": "string", "minLength": 1 },
+        "uri": { "type": "string", "minLength": 1 },
+        "mimeType": { "type": "string" },
+        "sha256": { "type": "string" }
+      },
+      "required": ["standard", "kind", "uri"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "NodeOnSysML cross-domain API",
+    "version": "0.1.0",
+    "description": "Digital-thread services layered above (not replacing) the OMG Systems Modeling API and FHIR REST. Trace payloads conform to schemas/trace-link.schema.json."
+  },
+  "paths": {
+    "/v1/traces": {
+      "get": {
+        "summary": "List active TraceLinks",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "schema": { "enum": ["draft", "valid", "stale", "invalid", "waived"] }
+          }
+        ],
+        "responses": { "200": { "description": "Active traces (supersession tips only)" } }
+      },
+      "post": {
+        "summary": "Create a TraceLink",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "../schemas/trace-link.schema.json" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Created" },
+          "409": { "description": "Duplicate id (store is append-only)" },
+          "422": { "description": "Schema validation failure" }
+        }
+      }
+    },
+    "/v1/traces/{traceId}": {
+      "get": {
+        "summary": "Fetch one TraceLink (including superseded history records)",
+        "parameters": [
+          { "name": "traceId", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "Trace" }, "404": { "description": "Unknown" } }
+      },
+      "patch": {
+        "summary": "Transition trace status (appends a superseding record; history is preserved)",
+        "parameters": [
+          { "name": "traceId", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": { "enum": ["draft", "valid", "stale", "invalid", "waived"] },
+                  "reason": { "type": "string" },
+                  "at": { "type": "string" },
+                  "by": { "type": "string" }
+                },
+                "required": ["status"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Superseding trace record" },
+          "409": { "description": "Trace already superseded" }
+        }
+      }
+    },
+    "/v1/impact/sysml/{projectId}/{commitId}/{elementId}": {
+      "get": {
+        "summary": "Evaluate impact of a SysML element's state at a commit on its traces",
+        "parameters": [
+          { "name": "projectId", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "commitId", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "elementId", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "Per-trace staleness/invalidity evaluation" } }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "DeviceMetric",
+  "id": "doppler-velocity-capability",
+  "type": {
+    "coding": [
+      {
+        "system": "https://example.org/fhir/exmc/CodeSystem/exmc-metrics",
+        "code": "doppler-velocity",
+        "display": "dopplerVelocity"
+      }
+    ],
+    "text": "Peak doppler blood-flow velocity."
+  },
+  "device": {
+    "reference": "Device/ultrasound-unit01"
+  },
+  "category": "measurement",
+  "unit": {
+    "coding": [
+      {
+        "system": "http://unitsofmeasure.org",
+        "code": "cm/s"
+      }
+    ]
+  }
+}

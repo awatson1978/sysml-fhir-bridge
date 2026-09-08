@@ -1,0 +1,384 @@
+<svg version="1.1" baseProfile="full" width="3017.0" height="464.0" viewBox="0 0 3017 464" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+	<desc >#direction: down
+	#spacing: 40
+	#padding: 10
+	#.sysml: fill=#dbe9ff
+	#.trace: fill=#fff3d6
+	#.fhir: fill=#dcf5dc
+	#.artifact: fill=#eeeeee
+	[&lt;sysml&gt; PerformUltrasoundExam
+	(ActionDefinition)]
+	[&lt;sysml&gt; dopplerVelocity
+	(AttributeUsage)]
+	[&lt;sysml&gt; heartRateMetric
+	(AttributeUsage)]
+	[&lt;artifact&gt; icd-contract]
+	[&lt;fhir&gt; ActivityDefinition/perform-ultrasound-exam]
+	[&lt;fhir&gt; Device/ultrasound-unit01]
+	[&lt;fhir&gt; DeviceDefinition/exmc-ultrasound-type]
+	[&lt;fhir&gt; DeviceMetric/doppler-velocity-capability]
+	[&lt;fhir&gt; DeviceMetric/heart-rate-metric-capability]
+	[&lt;fhir&gt; profile exmc-physiology-observation
+	v0.4.0]
+	[&lt;fhir&gt; Observation/doppler-velocity-example]
+	[&lt;fhir&gt; Observation/heart-rate-metric-example]
+	[&lt;sysml&gt; ExmcUltrasound
+	(PartDefinition)]
+	[&lt;sysml&gt; ultrasoundUnit01
+	(PartUsage)]
+	[&lt;sysml&gt; medicalDataPort
+	(PortUsage)]
+	[&lt;sysml&gt; ProvideDiagnosticUltrasound
+	(RequirementUsage)]
+	[&lt;sysml&gt; MedicalTelemetryBandwidth
+	(RequirementUsage)]
+	[&lt;sysml&gt; UltrasoundDiagnosticWorkflowTest
+	(ConstraintUsage)]
+	[&lt;sysml&gt; PerformUltrasoundExam
+	(ActionDefinition)]- operationalizes [valid] -&gt;[&lt;fhir&gt; ActivityDefinition/perform-ultrasound-exam]
+	[&lt;sysml&gt; dopplerVelocity
+	(AttributeUsage)]- realizes [valid] -&gt;[&lt;fhir&gt; DeviceMetric/doppler-velocity-capability]
+	[&lt;sysml&gt; dopplerVelocity
+	(AttributeUsage)]- emits [valid] -&gt;[&lt;fhir&gt; profile exmc-physiology-observation
+	v0.4.0]
+	[&lt;sysml&gt; dopplerVelocity
+	(AttributeUsage)]- emits [valid] -&gt;[&lt;fhir&gt; Observation/doppler-velocity-example]
+	[&lt;sysml&gt; heartRateMetric
+	(AttributeUsage)]- realizes [valid] -&gt;[&lt;fhir&gt; DeviceMetric/heart-rate-metric-capability]
+	[&lt;sysml&gt; heartRateMetric
+	(AttributeUsage)]- emits [valid] -&gt;[&lt;fhir&gt; profile exmc-physiology-observation
+	v0.4.0]
+	[&lt;sysml&gt; heartRateMetric
+	(AttributeUsage)]- emits [valid] -&gt;[&lt;fhir&gt; Observation/heart-rate-metric-example]
+	[&lt;sysml&gt; ExmcUltrasound
+	(PartDefinition)]- owns -&gt;[&lt;sysml&gt; PerformUltrasoundExam
+	(ActionDefinition)]
+	[&lt;sysml&gt; ExmcUltrasound
+	(PartDefinition)]- owns -&gt;[&lt;sysml&gt; dopplerVelocity
+	(AttributeUsage)]
+	[&lt;sysml&gt; ExmcUltrasound
+	(PartDefinition)]- owns -&gt;[&lt;sysml&gt; heartRateMetric
+	(AttributeUsage)]
+	[&lt;sysml&gt; ExmcUltrasound
+	(PartDefinition)]- documentedBy [valid] -&gt;[&lt;fhir&gt; DeviceDefinition/exmc-ultrasound-type]
+	[&lt;sysml&gt; ExmcUltrasound
+	(PartDefinition)]- owns -&gt;[&lt;sysml&gt; medicalDataPort
+	(PortUsage)]
+	[&lt;sysml&gt; ultrasoundUnit01
+	(PartUsage)]- operationalizes [valid] -&gt;[&lt;fhir&gt; Device/ultrasound-unit01]
+	[&lt;sysml&gt; ultrasoundUnit01
+	(PartUsage)]- definedBy -&gt;[&lt;sysml&gt; ExmcUltrasound
+	(PartDefinition)]
+	[&lt;sysml&gt; medicalDataPort
+	(PortUsage)]- documentedBy [valid] -&gt;[&lt;artifact&gt; icd-contract]
+	[&lt;sysml&gt; ProvideDiagnosticUltrasound
+	(RequirementUsage)]- constrains [valid] -&gt;[&lt;fhir&gt; profile exmc-physiology-observation
+	v0.4.0]
+	[&lt;sysml&gt; ProvideDiagnosticUltrasound
+	(RequirementUsage)]- satisfiedBy -&gt;[&lt;sysml&gt; ExmcUltrasound
+	(PartDefinition)]
+	[&lt;sysml&gt; ProvideDiagnosticUltrasound
+	(RequirementUsage)]- verifiedBy -&gt;[&lt;sysml&gt; UltrasoundDiagnosticWorkflowTest
+	(ConstraintUsage)]
+	[&lt;sysml&gt; MedicalTelemetryBandwidth
+	(RequirementUsage)]- constrains [valid] -&gt;[&lt;fhir&gt; profile exmc-physiology-observation
+	v0.4.0]
+	[&lt;sysml&gt; MedicalTelemetryBandwidth
+	(RequirementUsage)]- constrains -&gt;[&lt;sysml&gt; medicalDataPort
+	(PortUsage)]
+	</desc>
+	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="bold" font-style="normal">
+		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+			<g stroke="transparent" fill="transparent">
+				<rect x="0.0" y="0.0" height="464.0" width="3017.0" stroke="none"></rect>
+			</g>
+			<g transform="translate(10, 10)" fill="#33322E">
+				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+					<text x="1140.0" y="282.0" stroke="none">operationalizes</text>
+					<path d="M609.8 236.0 L609.75 256 L1130 292.02642369020504 L1130.0 292.0 " fill="none"></path>
+					<path d="M1130.0 295.1 L177.5 332 L177.5 353.3333333333333 L177.5 353.3 " fill="none"></path>
+					<path d="M172.2 346.7 L177.5 353.3 L182.8 346.7 L177.5 360.0 Z"></path>
+					<text x="1140.0" y="280.9" stroke="none">realizes</text>
+					<path d="M818.9 236.0 L810.25 256 L1130 290.8901651112706 L1130.0 290.9 " fill="none"></path>
+					<path d="M1130.0 295.8 L562 332 L562 353.3333333333333 L562.0 353.3 " fill="none"></path>
+					<path d="M556.7 346.7 L562.0 353.3 L567.3 346.7 L562.0 360.0 Z"></path>
+					<text x="1140.0" y="280.0" stroke="none">emits</text>
+					<path d="M861.1 236.0 L884.75 256 L1130 290.04383561643834 L1130.0 290.0 " fill="none"></path>
+					<path d="M1130.0 296.7 L762 332 L825.1580886984385 350.15795050080106 L825.2 350.2 " fill="none"></path>
+					<path d="M817.3 353.4 L825.2 350.2 L820.2 343.2 L831.6 352.0 Z"></path>
+					<text x="1140.0" y="278.6" stroke="none">emits</text>
+					<path d="M903.2 236.0 L959.25 256 L1130 288.564617314931 L1130.0 288.6 " fill="none"></path>
+					<path d="M1187.0 303.3 L1275 332 L1275 353.3333333333333 L1275.0 353.3 " fill="none"></path>
+					<path d="M1269.7 346.7 L1275.0 353.3 L1280.3 346.7 L1275.0 360.0 Z"></path>
+					<text x="1140.0" y="277.2" stroke="none">realizes</text>
+					<path d="M1007.9 236.0 L999.25 256 L1130 287.1993720565149 L1130.0 287.2 " fill="none"></path>
+					<path d="M1187.0 296.2 L1645 332 L1645 353.3333333333333 L1645.0 353.3 " fill="none"></path>
+					<path d="M1639.7 346.7 L1645.0 353.3 L1650.3 346.7 L1645.0 360.0 Z"></path>
+					<text x="1140.0" y="274.9" stroke="none">emits</text>
+					<path d="M1030.6 236.0 L1039.25 256 L1130 284.9182389937107 L1130.0 284.9 " fill="none"></path>
+					<path d="M1130.0 297.0 L802 332 L847.9489389281313 349.6137599224503 L847.9 349.6 " fill="none"></path>
+					<path d="M839.8 352.2 L847.9 349.6 L843.6 342.2 L854.2 352.0 Z"></path>
+					<text x="1140.0" y="266.5" stroke="none">emits</text>
+					<path d="M1062.9 236.0 L1096.5 256 L1130 276.5322580645161 L1130.0 276.5 " fill="none"></path>
+					<path d="M1187.0 295.3 L2018 332 L2018 353.3333333333333 L2018.0 353.3 " fill="none"></path>
+					<path d="M2012.7 346.7 L2018.0 353.3 L2023.3 346.7 L2018.0 360.0 Z"></path>
+					<text x="537.8" y="174.0" stroke="none">owns -&gt;</text>
+					<path d="M836.3 129.4 L609.75 164 L609.75 184 L609.8 184.0 " fill="none"></path>
+					<text x="758.3" y="174.0" stroke="none">owns -&gt;</text>
+					<path d="M865.3 144.0 L830.25 164 L830.25 184 L830.3 184.0 " fill="none"></path>
+					<text x="1029.3" y="174.0" stroke="none">owns -&gt;</text>
+					<path d="M972.1 144.0 L1019.25 164 L1019.25 184 L1019.3 184.0 " fill="none"></path>
+					<text x="1158.1" y="266.0" stroke="none">documentedBy</text>
+					<path d="M985.3 133.2 L1136.5 164 L1136.5 210 L1136.5 210 L1136.5 256 L1136.5 256 L1148.078947368421 276 L1148.1 276.0 " fill="none"></path>
+					<path d="M1187.0 294.9 L2383.5 332 L2383.5 353.3333333333333 L2383.5 353.3 " fill="none"></path>
+					<path d="M2378.2 346.7 L2383.5 353.3 L2388.8 346.7 L2383.5 360.0 Z"></path>
+					<text x="1642.0" y="174.0" stroke="none">owns -&gt;</text>
+					<path d="M985.3 122.8 L1632 164 L1632 184 L1632.0 184.0 " fill="none"></path>
+					<text x="1177.0" y="266.0" stroke="none">operationalizes</text>
+					<path d="M1065.5 44.9 L1176.5 72 L1176.5 118 L1176.5 118 L1176.5 164 L1176.5 164 L1176.5 210 L1176.5 210 L1176.5 256 L1176.5 256 L1167.0263157894738 276 L1167.0 276.0 " fill="none"></path>
+					<path d="M1187.0 294.7 L2695 332 L2695 353.3333333333333 L2695.0 353.3 " fill="none"></path>
+					<path d="M2689.7 346.7 L2695.0 353.3 L2700.3 346.7 L2695.0 360.0 Z"></path>
+					<text x="789.4" y="82.0" stroke="none">definedBy -&gt;</text>
+					<path d="M933.0 52.0 L890.75 72 L899.445652173913 92 L899.4 92.0 " fill="none"></path>
+					<text x="1059.0" y="281.7" stroke="none">documentedBy</text>
+					<path d="M1632.0 236.0 L1632 256 L1187 291.7127771911299 L1187.0 291.7 " fill="none"></path>
+					<path d="M1187.0 294.6 L2900.5 332 L2900.5 353.3333333333333 L2900.5 353.3 " fill="none"></path>
+					<path d="M2895.2 346.7 L2900.5 353.3 L2905.8 346.7 L2900.5 360.0 Z"></path>
+					<text x="1095.0" y="282.4" stroke="none">constrains</text>
+					<path d="M1404.5 36.4 L1832.5 72 L1832.5 118 L1832.5 118 L1832.5 164 L1832.5 164 L1832.5 210 L1832.5 210 L1832.5 256 L1832.5 256 L1187 292.393175074184 L1187.0 292.4 " fill="none"></path>
+					<path d="M1130.0 297.4 L842 332 L871.0032333419352 348.67685917161276 L871.0 348.7 " fill="none"></path>
+					<path d="M862.6 350.0 L871.0 348.7 L867.9 340.7 L876.8 352.0 Z"></path>
+					<text x="868.3" y="92.8" stroke="none">satisfiedBy -&gt;</text>
+					<path d="M1198.9 52.0 L1136.5 72 L985.25 102.81949058693245 L985.3 102.8 " fill="none"></path>
+					<text x="1374.0" y="82.0" stroke="none">verifiedBy -&gt;</text>
+					<path d="M1327.5 52.0 L1364 72 L1364 92 L1364.0 92.0 " fill="none"></path>
+					<text x="1095.0" y="282.5" stroke="none">constrains</text>
+					<path d="M1785.3 144.0 L1872.5 164 L1872.5 210 L1872.5 210 L1872.5 256 L1872.5 256 L1187 292.48319327731093 L1187.0 292.5 " fill="none"></path>
+					<path d="M1130.0 300.1 L982 332 L961.2037525535403 347.9437897089524 L961.2 347.9 " fill="none"></path>
+					<path d="M963.2 339.7 L961.2 347.9 L969.7 348.1 L955.9 352.0 Z"></path>
+					<text x="1541.6" y="174.0" stroke="none">constrains -&gt;</text>
+					<path d="M1672.0 144.0 L1672 164 L1654.608695652174 184 L1654.6 184.0 " fill="none"></path>
+					<g data-name="PerformUltrasoundExam">
+						<g fill="#dbe9ff" stroke="#33322E" data-name="PerformUltrasoundExam">
+							<rect x="503.8" y="184.0" height="52.0" width="212.0" data-name="PerformUltrasoundExam"></rect>
+						</g>
+						<g transform="translate(503.75, 184)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PerformUltrasoundExam" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="PerformUltrasoundExam" data-compartment="0">
+								<text x="96.0" y="14.1" stroke="none" text-anchor="middle" data-name="PerformUltrasoundExam" data-compartment="0">PerformUltrasoundExam</text>
+								<text x="96.0" y="30.3" stroke="none" text-anchor="middle" data-name="PerformUltrasoundExam" data-compartment="0">(ActionDefinition)</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="dopplerVelocity">
+						<g fill="#dbe9ff" stroke="#33322E" data-name="dopplerVelocity">
+							<rect x="755.8" y="184.0" height="52.0" width="149.0" data-name="dopplerVelocity"></rect>
+						</g>
+						<g transform="translate(755.75, 184)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="dopplerVelocity" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="dopplerVelocity" data-compartment="0">
+								<text x="64.5" y="14.1" stroke="none" text-anchor="middle" data-name="dopplerVelocity" data-compartment="0">dopplerVelocity</text>
+								<text x="64.5" y="30.3" stroke="none" text-anchor="middle" data-name="dopplerVelocity" data-compartment="0">(AttributeUsage)</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="heartRateMetric">
+						<g fill="#dbe9ff" stroke="#33322E" data-name="heartRateMetric">
+							<rect x="944.8" y="184.0" height="52.0" width="149.0" data-name="heartRateMetric"></rect>
+						</g>
+						<g transform="translate(944.75, 184)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="heartRateMetric" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="heartRateMetric" data-compartment="0">
+								<text x="64.5" y="14.1" stroke="none" text-anchor="middle" data-name="heartRateMetric" data-compartment="0">heartRateMetric</text>
+								<text x="64.5" y="30.3" stroke="none" text-anchor="middle" data-name="heartRateMetric" data-compartment="0">(AttributeUsage)</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="icd-contract">
+						<g fill="#eeeeee" stroke="#33322E" data-name="icd-contract">
+							<rect x="2844.0" y="360.0" height="36.0" width="113.0" data-name="icd-contract"></rect>
+						</g>
+						<g transform="translate(2844, 360)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="icd-contract" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="icd-contract" data-compartment="0">
+								<text x="46.5" y="14.1" stroke="none" text-anchor="middle" data-name="icd-contract" data-compartment="0">icd-contract</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="ActivityDefinition/perform-ultrasound-exam">
+						<g fill="#dcf5dc" stroke="#33322E" data-name="ActivityDefinition/perform-ultrasound-exam">
+							<rect x="0.0" y="360.0" height="36.0" width="355.0" data-name="ActivityDefinition/perform-ultrasound-exam"></rect>
+						</g>
+						<g transform="translate(0, 360)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ActivityDefinition/perform-ultrasound-exam" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="ActivityDefinition/perform-ultrasound-exam" data-compartment="0">
+								<text x="167.5" y="14.1" stroke="none" text-anchor="middle" data-name="ActivityDefinition/perform-ultrasound-exam" data-compartment="0">ActivityDefinition/perform-ultrasound-exam</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Device/ultrasound-unit01">
+						<g fill="#dcf5dc" stroke="#33322E" data-name="Device/ultrasound-unit01">
+							<rect x="2586.0" y="360.0" height="36.0" width="218.0" data-name="Device/ultrasound-unit01"></rect>
+						</g>
+						<g transform="translate(2586, 360)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Device/ultrasound-unit01" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="Device/ultrasound-unit01" data-compartment="0">
+								<text x="99.0" y="14.1" stroke="none" text-anchor="middle" data-name="Device/ultrasound-unit01" data-compartment="0">Device/ultrasound-unit01</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="DeviceDefinition/exmc-ultrasound-type">
+						<g fill="#dcf5dc" stroke="#33322E" data-name="DeviceDefinition/exmc-ultrasound-type">
+							<rect x="2221.0" y="360.0" height="36.0" width="325.0" data-name="DeviceDefinition/exmc-ultrasound-type"></rect>
+						</g>
+						<g transform="translate(2221, 360)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DeviceDefinition/exmc-ultrasound-type" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="DeviceDefinition/exmc-ultrasound-type" data-compartment="0">
+								<text x="152.5" y="14.1" stroke="none" text-anchor="middle" data-name="DeviceDefinition/exmc-ultrasound-type" data-compartment="0">DeviceDefinition/exmc-ultrasound-type</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="DeviceMetric/doppler-velocity-capability">
+						<g fill="#dcf5dc" stroke="#33322E" data-name="DeviceMetric/doppler-velocity-capability">
+							<rect x="395.0" y="360.0" height="36.0" width="334.0" data-name="DeviceMetric/doppler-velocity-capability"></rect>
+						</g>
+						<g transform="translate(395, 360)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DeviceMetric/doppler-velocity-capability" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="DeviceMetric/doppler-velocity-capability" data-compartment="0">
+								<text x="157.0" y="14.1" stroke="none" text-anchor="middle" data-name="DeviceMetric/doppler-velocity-capability" data-compartment="0">DeviceMetric/doppler-velocity-capability</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="DeviceMetric/heart-rate-metric-capability">
+						<g fill="#dcf5dc" stroke="#33322E" data-name="DeviceMetric/heart-rate-metric-capability">
+							<rect x="1475.0" y="360.0" height="36.0" width="340.0" data-name="DeviceMetric/heart-rate-metric-capability"></rect>
+						</g>
+						<g transform="translate(1475, 360)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DeviceMetric/heart-rate-metric-capability" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="DeviceMetric/heart-rate-metric-capability" data-compartment="0">
+								<text x="160.0" y="14.1" stroke="none" text-anchor="middle" data-name="DeviceMetric/heart-rate-metric-capability" data-compartment="0">DeviceMetric/heart-rate-metric-capability</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="profile exmc-physiology-observation">
+						<g fill="#dcf5dc" stroke="#33322E" data-name="profile exmc-physiology-observation">
+							<rect x="769.0" y="352.0" height="52.0" width="306.0" data-name="profile exmc-physiology-observation"></rect>
+						</g>
+						<g transform="translate(769, 352)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="profile exmc-physiology-observation" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="profile exmc-physiology-observation" data-compartment="0">
+								<text x="143.0" y="14.1" stroke="none" text-anchor="middle" data-name="profile exmc-physiology-observation" data-compartment="0">profile exmc-physiology-observation</text>
+								<text x="143.0" y="30.3" stroke="none" text-anchor="middle" data-name="profile exmc-physiology-observation" data-compartment="0">v0.4.0</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Observation/doppler-velocity-example">
+						<g fill="#dcf5dc" stroke="#33322E" data-name="Observation/doppler-velocity-example">
+							<rect x="1115.0" y="360.0" height="36.0" width="320.0" data-name="Observation/doppler-velocity-example"></rect>
+						</g>
+						<g transform="translate(1115, 360)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Observation/doppler-velocity-example" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="Observation/doppler-velocity-example" data-compartment="0">
+								<text x="150.0" y="14.1" stroke="none" text-anchor="middle" data-name="Observation/doppler-velocity-example" data-compartment="0">Observation/doppler-velocity-example</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Observation/heart-rate-metric-example">
+						<g fill="#dcf5dc" stroke="#33322E" data-name="Observation/heart-rate-metric-example">
+							<rect x="1855.0" y="360.0" height="36.0" width="326.0" data-name="Observation/heart-rate-metric-example"></rect>
+						</g>
+						<g transform="translate(1855, 360)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Observation/heart-rate-metric-example" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="Observation/heart-rate-metric-example" data-compartment="0">
+								<text x="153.0" y="14.1" stroke="none" text-anchor="middle" data-name="Observation/heart-rate-metric-example" data-compartment="0">Observation/heart-rate-metric-example</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="ExmcUltrasound">
+						<g fill="#dbe9ff" stroke="#33322E" data-name="ExmcUltrasound">
+							<rect x="836.3" y="92.0" height="52.0" width="149.0" data-name="ExmcUltrasound"></rect>
+						</g>
+						<g transform="translate(836.25, 92)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ExmcUltrasound" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="ExmcUltrasound" data-compartment="0">
+								<text x="64.5" y="14.1" stroke="none" text-anchor="middle" data-name="ExmcUltrasound" data-compartment="0">ExmcUltrasound</text>
+								<text x="64.5" y="30.3" stroke="none" text-anchor="middle" data-name="ExmcUltrasound" data-compartment="0">(PartDefinition)</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="ultrasoundUnit01">
+						<g fill="#dbe9ff" stroke="#33322E" data-name="ultrasoundUnit01">
+							<rect x="910.5" y="0.0" height="52.0" width="155.0" data-name="ultrasoundUnit01"></rect>
+						</g>
+						<g transform="translate(910.5, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ultrasoundUnit01" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="ultrasoundUnit01" data-compartment="0">
+								<text x="67.5" y="14.1" stroke="none" text-anchor="middle" data-name="ultrasoundUnit01" data-compartment="0">ultrasoundUnit01</text>
+								<text x="67.5" y="30.3" stroke="none" text-anchor="middle" data-name="ultrasoundUnit01" data-compartment="0">(PartUsage)</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="medicalDataPort">
+						<g fill="#dbe9ff" stroke="#33322E" data-name="medicalDataPort">
+							<rect x="1557.0" y="184.0" height="52.0" width="150.0" data-name="medicalDataPort"></rect>
+						</g>
+						<g transform="translate(1557, 184)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="medicalDataPort" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="medicalDataPort" data-compartment="0">
+								<text x="65.0" y="14.1" stroke="none" text-anchor="middle" data-name="medicalDataPort" data-compartment="0">medicalDataPort</text>
+								<text x="65.0" y="30.3" stroke="none" text-anchor="middle" data-name="medicalDataPort" data-compartment="0">(PortUsage)</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="ProvideDiagnosticUltrasound">
+						<g fill="#dbe9ff" stroke="#33322E" data-name="ProvideDiagnosticUltrasound">
+							<rect x="1155.5" y="0.0" height="52.0" width="249.0" data-name="ProvideDiagnosticUltrasound"></rect>
+						</g>
+						<g transform="translate(1155.5, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ProvideDiagnosticUltrasound" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="ProvideDiagnosticUltrasound" data-compartment="0">
+								<text x="114.5" y="14.1" stroke="none" text-anchor="middle" data-name="ProvideDiagnosticUltrasound" data-compartment="0">ProvideDiagnosticUltrasound</text>
+								<text x="114.5" y="30.3" stroke="none" text-anchor="middle" data-name="ProvideDiagnosticUltrasound" data-compartment="0">(RequirementUsage)</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="MedicalTelemetryBandwidth">
+						<g fill="#dbe9ff" stroke="#33322E" data-name="MedicalTelemetryBandwidth">
+							<rect x="1551.5" y="92.0" height="52.0" width="241.0" data-name="MedicalTelemetryBandwidth"></rect>
+						</g>
+						<g transform="translate(1551.5, 92)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="MedicalTelemetryBandwidth" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="MedicalTelemetryBandwidth" data-compartment="0">
+								<text x="110.5" y="14.1" stroke="none" text-anchor="middle" data-name="MedicalTelemetryBandwidth" data-compartment="0">MedicalTelemetryBandwidth</text>
+								<text x="110.5" y="30.3" stroke="none" text-anchor="middle" data-name="MedicalTelemetryBandwidth" data-compartment="0">(RequirementUsage)</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="UltrasoundDiagnosticWorkflowTest">
+						<g fill="#dbe9ff" stroke="#33322E" data-name="UltrasoundDiagnosticWorkflowTest">
+							<rect x="1216.5" y="92.0" height="52.0" width="295.0" data-name="UltrasoundDiagnosticWorkflowTest"></rect>
+						</g>
+						<g transform="translate(1216.5, 92)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UltrasoundDiagnosticWorkflowTest" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="UltrasoundDiagnosticWorkflowTest" data-compartment="0">
+								<text x="137.5" y="14.1" stroke="none" text-anchor="middle" data-name="UltrasoundDiagnosticWorkflowTest" data-compartment="0">UltrasoundDiagnosticWorkflowTest</text>
+								<text x="137.5" y="30.3" stroke="none" text-anchor="middle" data-name="UltrasoundDiagnosticWorkflowTest" data-compartment="0">(ConstraintUsage)</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="valid">
+						<g fill="#eee8d5" stroke="#33322E" data-name="valid">
+							<rect x="1130.0" y="276.0" height="36.0" width="57.0" data-name="valid"></rect>
+						</g>
+						<g transform="translate(1130, 276)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="valid" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="valid" data-compartment="0">
+								<text x="18.5" y="14.1" stroke="none" text-anchor="middle" data-name="valid" data-compartment="0">valid</text>
+								
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

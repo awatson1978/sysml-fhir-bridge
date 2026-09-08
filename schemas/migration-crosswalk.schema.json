@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nodeonsysml.example/schemas/migration-crosswalk.schema.json",
+  "title": "MigrationCrosswalkEntry",
+  "description": "Persistent identity crosswalk from a legacy SysML 1.x element to its SysML v2 counterpart.",
+  "type": "object",
+  "properties": {
+    "legacy": {
+      "type": "object",
+      "properties": {
+        "tool": { "type": "string" },
+        "modelId": { "type": "string" },
+        "qualifiedName": { "type": "string" }
+      },
+      "required": ["tool", "modelId", "qualifiedName"],
+      "additionalProperties": false
+    },
+    "sysmlV2": {
+      "type": "object",
+      "properties": {
+        "projectId": { "type": "string" },
+        "elementId": { "type": "string" }
+      },
+      "required": ["projectId", "elementId"],
+      "additionalProperties": false
+    },
+    "migrationRule": { "type": "string" },
+    "status": { "enum": ["proposed", "accepted", "rejected"] }
+  },
+  "required": ["legacy", "sysmlV2", "migrationRule", "status"],
+  "additionalProperties": false
+}

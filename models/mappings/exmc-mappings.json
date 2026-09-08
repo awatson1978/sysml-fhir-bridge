@@ -1,0 +1,94 @@
+{
+  "rulesetId": "exmc-mappings",
+  "rulesetVersion": "1.8.2",
+  "rules": [
+    {
+      "id": "sysml-device-type-to-devicedefinition",
+      "version": "1.2.0",
+      "description": "A SysML part definition marked as a medical-device type maps to at most one FHIR DeviceDefinition (kind/definition, not a deployed device).",
+      "sourceKind": "PartDefinition",
+      "relationship": "documentedBy",
+      "targetResourceTypes": ["DeviceDefinition"],
+      "cardinality": "1 SysML type -> 0..1 DeviceDefinition",
+      "semanticConfidence": "strong",
+      "notes": "A type does not automatically imply a deployed device."
+    },
+    {
+      "id": "sysml-deployed-part-to-device",
+      "version": "1.1.0",
+      "description": "A SysML part usage with an explicit deployment binding maps to at most one FHIR Device instance; different flight units get different Device identities.",
+      "sourceKind": "PartUsage",
+      "relationship": "operationalizes",
+      "targetResourceTypes": ["Device"],
+      "cardinality": "1 deployment binding -> 0..1 Device",
+      "semanticConfidence": "strong",
+      "notes": "Requires metadata.deploymentBinding; a design usage alone is not a runtime Device."
+    },
+    {
+      "id": "sysml-metric-to-devicemetric",
+      "version": "1.3.0",
+      "description": "A modeled observable metric capability maps to DeviceMetric (capability, not sampled value).",
+      "sourceKind": "AttributeUsage",
+      "relationship": "realizes",
+      "targetResourceTypes": ["DeviceMetric"],
+      "cardinality": "1 modeled metric capability -> 0..* DeviceMetric",
+      "semanticConfidence": "strong",
+      "notes": "DeviceMetric defines capability; values become Observations at runtime."
+    },
+    {
+      "id": "sysml-observable-to-fhir-observation",
+      "version": "1.3.0",
+      "description": "A modeled observable maps to exactly one Observation profile definition; runtime instances are 0..N Observations conforming to it.",
+      "sourceKind": "AttributeUsage",
+      "relationship": "emits",
+      "targetResourceTypes": ["Observation"],
+      "cardinality": "1 modeled observable -> 1 profile definition; 0..N runtime Observations",
+      "semanticConfidence": "strong",
+      "notes": "Constraints remain SysML; values become Observations when clinically meaningful."
+    },
+    {
+      "id": "sysml-requirement-constrains-profile",
+      "version": "1.0.1",
+      "description": "A SysML requirement constrains 0..N FHIR artifacts. The requirement itself is never a FHIR resource.",
+      "sourceKind": "RequirementUsage",
+      "relationship": "constrains",
+      "targetResourceTypes": [],
+      "cardinality": "1 SysML requirement -> 0..N constrained FHIR artifacts",
+      "semanticConfidence": "contextual",
+      "notes": "TraceLink only; optionally mirrored into R5 Requirements for FHIR-facing publication."
+    },
+    {
+      "id": "sysml-port-to-icd-contract",
+      "version": "1.1.0",
+      "description": "No single FHIR resource represents a SysML port. The port maps to a generated interface-control contract listing permitted FHIR profile/message types.",
+      "sourceKind": "PortUsage",
+      "relationship": "documentedBy",
+      "targetResourceTypes": [],
+      "cardinality": "1 port -> 0..N permitted FHIR profile/message types",
+      "semanticConfidence": "contextual",
+      "notes": "Emits NO_DIRECT_MAPPING warning and generates an ICD contract indexed via DocumentReference."
+    },
+    {
+      "id": "sysml-behavior-to-activitydefinition",
+      "version": "1.0.0",
+      "description": "A behavior definition with genuinely clinical/workflow semantics maps to a definitional FHIR workflow artifact.",
+      "sourceKind": "ActionDefinition",
+      "relationship": "operationalizes",
+      "targetResourceTypes": ["ActivityDefinition"],
+      "cardinality": "1 behavior definition -> 0..N FHIR definitional workflows",
+      "semanticConfidence": "contextual",
+      "notes": "Executions become Procedure/Task/Communication at runtime, never at design time."
+    }
+  ],
+  "unitCrosswalk": {
+    "description": "Explicit engineering-unit to UCUM conversions. Absence of an entry is a mapping error, never a silent coercion.",
+    "entries": {
+      "bpm": "/min",
+      "/min": "/min",
+      "cm/s": "cm/s",
+      "mmHg": "mm[Hg]",
+      "kPa": "kPa",
+      "degC": "Cel"
+    }
+  }
+}

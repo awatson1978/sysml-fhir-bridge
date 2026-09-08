@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nodeonsysml.example/schemas/change-proposal.schema.json",
+  "title": "ChangeProposal",
+  "description": "A design-feedback item produced by the learning loop: runtime clinical evidence proposing a change to the engineering model. Proposals are inputs to human review (a proposed SysML branch/commit), never direct model mutations.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "kind": {
+      "enum": ["new-observable", "requirement-revision", "re-verify", "retire-element"]
+    },
+    "targetElementId": { "type": "string" },
+    "title": { "type": "string", "minLength": 1 },
+    "rationale": { "type": "string", "minLength": 1 },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "resourceType": { "type": "string" },
+          "resourceId": { "type": "string" },
+          "code": { "type": "string" },
+          "system": { "type": "string" }
+        },
+        "required": ["resourceType", "resourceId"],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "proposedAt": { "type": "string" },
+    "status": { "enum": ["proposed", "accepted", "rejected"] }
+  },
+  "required": ["id", "kind", "title", "rationale", "evidence", "proposedAt", "status"],
+  "additionalProperties": false
+}

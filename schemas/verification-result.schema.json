@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nodeonsysml.example/schemas/verification-result.schema.json",
+  "title": "VerificationResult",
+  "description": "Result of executing a verification case, with linked evidence artifacts.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "caseId": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["pass", "fail", "inconclusive"] },
+    "executedAt": { "type": "string" },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "standard": { "const": "external" },
+          "kind": { "type": "string" },
+          "uri": { "type": "string" },
+          "mimeType": { "type": "string" },
+          "sha256": { "type": "string" }
+        },
+        "required": ["standard", "kind", "uri"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["id", "caseId", "status", "executedAt", "evidence"],
+  "additionalProperties": false
+}

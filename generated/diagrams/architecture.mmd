@@ -1,0 +1,27 @@
+flowchart TD
+  docs["Generated ICD / verification docs"]
+  class docs artifact
+  edge["Medical Edge Gateway"]
+  class edge fhir
+  fhir["FHIR Gateway"]
+  class fhir fhir
+  img["DICOM / artifact store"]
+  class img artifact
+  nos["NodeOnSysML kernel"]
+  class nos trace
+  sys["SysML v2 Model Service"]
+  class sys sysml
+  trace["Trace graph (versioned TraceLinks)"]
+  class trace trace
+  edge -->|Observations / Reports| fhir
+  edge -->|DICOM / raw artifacts| img
+  fhir -->|store-and-forward sync| edge
+  nos -->|deterministic docgen| docs
+  nos -->|FHIR REST| fhir
+  nos -->|artifact metadata| img
+  nos -->|Systems Modeling API| sys
+  nos -->|versioned TraceLinks| trace
+  classDef sysml fill:#dbe9ff,stroke:#3b6db3
+  classDef trace fill:#fff3d6,stroke:#b3923b
+  classDef fhir fill:#dcf5dc,stroke:#3f9c3f
+  classDef artifact fill:#eeeeee,stroke:#888888

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nodeonsysml.example/schemas/fhir-ref.schema.json",
+  "title": "FhirRef",
+  "description": "Version-pinned reference to a FHIR artifact: release version plus canonical (definitional) or resourceType/logicalId (instance).",
+  "type": "object",
+  "properties": {
+    "standard": { "const": "fhir" },
+    "fhirVersion": { "type": "string", "minLength": 1 },
+    "canonical": { "type": "string" },
+    "profileVersion": { "type": "string" },
+    "resourceType": { "type": "string" },
+    "logicalId": { "type": "string" },
+    "versionId": { "type": "string" }
+  },
+  "required": ["standard", "fhirVersion"],
+  "anyOf": [
+    { "required": ["canonical"] },
+    { "required": ["resourceType", "logicalId"] }
+  ],
+  "additionalProperties": false
+}

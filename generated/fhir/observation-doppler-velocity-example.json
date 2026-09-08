@@ -1,0 +1,30 @@
+{
+  "resourceType": "Observation",
+  "id": "doppler-velocity-example",
+  "meta": {
+    "profile": [
+      "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation"
+    ]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "https://example.org/fhir/exmc/CodeSystem/exmc-metrics",
+        "code": "doppler-velocity",
+        "display": "dopplerVelocity"
+      }
+    ],
+    "text": "Peak doppler blood-flow velocity."
+  },
+  "device": {
+    "reference": "Device/ultrasound-unit01"
+  },
+  "effectiveDateTime": "2027-03-18T16:22:00Z",
+  "valueQuantity": {
+    "value": 72,
+    "unit": "cm/s",
+    "system": "http://unitsofmeasure.org",
+    "code": "cm/s"
+  }
+}

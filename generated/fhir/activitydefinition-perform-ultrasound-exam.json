@@ -1,0 +1,11 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "perform-ultrasound-exam",
+  "status": "draft",
+  "name": "PerformUltrasoundExam",
+  "title": "Perform Ultrasound Exam",
+  "kind": "ServiceRequest",
+  "url": "https://example.org/fhir/exmc/ActivityDefinition/perform-ultrasound-exam",
+  "version": "0.4.0",
+  "description": "Guided diagnostic ultrasound acquisition behavior."
+}

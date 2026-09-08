@@ -1,0 +1,26 @@
+{
+  "resourceType": "DeviceMetric",
+  "id": "heart-rate-metric-capability",
+  "type": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "8867-4",
+        "display": "heartRateMetric"
+      }
+    ],
+    "text": "Heart rate derived from ultrasound doppler acquisition."
+  },
+  "device": {
+    "reference": "Device/ultrasound-unit01"
+  },
+  "category": "measurement",
+  "unit": {
+    "coding": [
+      {
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    ]
+  }
+}

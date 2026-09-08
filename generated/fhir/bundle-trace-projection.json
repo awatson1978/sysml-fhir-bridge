@@ -1,0 +1,172 @@
+{
+  "resourceType": "Bundle",
+  "id": "nodeonsysml-trace-projection",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "ConceptMap",
+        "id": "exmc-mappings-crosswalk",
+        "url": "https://example.org/fhir/exmc/ConceptMap/exmc-mappings",
+        "version": "1.8.2",
+        "name": "SysMLtoFHIRCrosswalk",
+        "title": "SysML v2 -> FHIR mapping crosswalk (NodeOnSysML integration profile)",
+        "status": "active",
+        "description": "Machine-readable crosswalk derived from the NodeOnSysML trace graph. noMap elements are semantically legitimate non-mappings (e.g. SysML ports), not gaps.",
+        "group": [
+          {
+            "source": "https://www.omg.org/spec/SysML/2.0",
+            "target": "https://example.org/fhir/exmc",
+            "element": [
+              {
+                "code": "sysml-behavior-to-activitydefinition",
+                "display": "ActionDefinition (operationalizes)",
+                "target": [
+                  {
+                    "code": "ActivityDefinition/perform-ultrasound-exam",
+                    "relationship": "related-to",
+                    "comment": "A behavior definition with genuinely clinical/workflow semantics maps to a definitional FHIR workflow artifact."
+                  }
+                ]
+              },
+              {
+                "code": "sysml-deployed-part-to-device",
+                "display": "PartUsage (operationalizes)",
+                "target": [
+                  {
+                    "code": "Device/ultrasound-unit01",
+                    "relationship": "source-is-narrower-than-target",
+                    "comment": "A SysML part usage with an explicit deployment binding maps to at most one FHIR Device instance; different flight units get different Device identities."
+                  }
+                ]
+              },
+              {
+                "code": "sysml-device-type-to-devicedefinition",
+                "display": "PartDefinition (documentedBy)",
+                "target": [
+                  {
+                    "code": "DeviceDefinition/exmc-ultrasound-type",
+                    "relationship": "source-is-narrower-than-target",
+                    "comment": "A SysML part definition marked as a medical-device type maps to at most one FHIR DeviceDefinition (kind/definition, not a deployed device)."
+                  }
+                ]
+              },
+              {
+                "code": "sysml-metric-to-devicemetric",
+                "display": "AttributeUsage (realizes)",
+                "target": [
+                  {
+                    "code": "DeviceMetric/doppler-velocity-capability",
+                    "relationship": "source-is-narrower-than-target",
+                    "comment": "A modeled observable metric capability maps to DeviceMetric (capability, not sampled value)."
+                  },
+                  {
+                    "code": "DeviceMetric/heart-rate-metric-capability",
+                    "relationship": "source-is-narrower-than-target",
+                    "comment": "A modeled observable metric capability maps to DeviceMetric (capability, not sampled value)."
+                  }
+                ]
+              },
+              {
+                "code": "sysml-observable-to-fhir-observation",
+                "display": "AttributeUsage (emits)",
+                "target": [
+                  {
+                    "code": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+                    "relationship": "source-is-narrower-than-target",
+                    "comment": "A modeled observable maps to exactly one Observation profile definition; runtime instances are 0..N Observations conforming to it."
+                  },
+                  {
+                    "code": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+                    "relationship": "source-is-narrower-than-target",
+                    "comment": "A modeled observable maps to exactly one Observation profile definition; runtime instances are 0..N Observations conforming to it."
+                  },
+                  {
+                    "code": "Observation/doppler-velocity-example",
+                    "relationship": "source-is-narrower-than-target",
+                    "comment": "A modeled observable maps to exactly one Observation profile definition; runtime instances are 0..N Observations conforming to it."
+                  },
+                  {
+                    "code": "Observation/heart-rate-metric-example",
+                    "relationship": "source-is-narrower-than-target",
+                    "comment": "A modeled observable maps to exactly one Observation profile definition; runtime instances are 0..N Observations conforming to it."
+                  }
+                ]
+              },
+              {
+                "code": "sysml-port-to-icd-contract",
+                "display": "PortUsage (documentedBy)",
+                "noMap": true
+              },
+              {
+                "code": "sysml-requirement-constrains-profile",
+                "display": "RequirementUsage (constrains)",
+                "target": [
+                  {
+                    "code": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+                    "relationship": "related-to",
+                    "comment": "A SysML requirement constrains 0..N FHIR artifacts. The requirement itself is never a FHIR resource."
+                  },
+                  {
+                    "code": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+                    "relationship": "related-to",
+                    "comment": "A SysML requirement constrains 0..N FHIR artifacts. The requirement itself is never a FHIR resource."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Provenance",
+        "id": "tx-exmc-0001",
+        "target": [
+          {
+            "reference": "ConceptMap/exmc-mappings-crosswalk"
+          }
+        ],
+        "recorded": "2027-03-18T16:22:00Z",
+        "agent": [
+          {
+            "type": {
+              "text": "assembler"
+            },
+            "who": {
+              "display": "nodeonsysml 0.1.0"
+            }
+          }
+        ],
+        "entity": [
+          {
+            "role": "source",
+            "what": {
+              "reference": "sysml:medical-system-foundation@sysml-8df65f0d",
+              "display": "SysML commit sysml-8df65f0d (8 elements)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "generated-doc-0",
+        "status": "current",
+        "description": "ExMC Medical Data Interface ICD",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/html",
+              "url": "generated/exmc-medical-icd.html",
+              "hash": "efcdb2bcccd1a98a90b2d7793ebcfc411c04c764f2074d1a800862f8bf0e51ec",
+              "title": "ExMC Medical Data Interface ICD"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

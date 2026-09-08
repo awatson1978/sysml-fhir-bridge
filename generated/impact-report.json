@@ -1,0 +1,35 @@
+{
+  "baselineCommit": "sysml-8df65f0d",
+  "evaluatedAgainst": "sysml-a1b2c3d4",
+  "evaluatedAt": "2027-03-18T16:25:21Z",
+  "affected": [
+    {
+      "traceId": "trace-895dccd846a8",
+      "sourceElement": "req-telemetry-014",
+      "previousStatus": "valid",
+      "newStatus": "stale",
+      "reason": "source semantic hash changed"
+    },
+    {
+      "traceId": "trace-fa03e789daab",
+      "sourceElement": "attr-doppler-velocity",
+      "previousStatus": "valid",
+      "newStatus": "invalid",
+      "reason": "source SysML element no longer exists"
+    },
+    {
+      "traceId": "trace-598fcf5510fc",
+      "sourceElement": "attr-doppler-velocity",
+      "previousStatus": "valid",
+      "newStatus": "invalid",
+      "reason": "source SysML element no longer exists"
+    },
+    {
+      "traceId": "trace-e9e68595f3da",
+      "sourceElement": "attr-doppler-velocity",
+      "previousStatus": "valid",
+      "newStatus": "invalid",
+      "reason": "source SysML element no longer exists"
+    }
+  ]
+}

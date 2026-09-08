@@ -1,0 +1,30 @@
+{
+  "resourceType": "Observation",
+  "id": "heart-rate-metric-example",
+  "meta": {
+    "profile": [
+      "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation"
+    ]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "8867-4",
+        "display": "heartRateMetric"
+      }
+    ],
+    "text": "Heart rate derived from ultrasound doppler acquisition."
+  },
+  "device": {
+    "reference": "Device/ultrasound-unit01"
+  },
+  "effectiveDateTime": "2027-03-18T16:22:00Z",
+  "valueQuantity": {
+    "value": 72,
+    "unit": "bpm",
+    "system": "http://unitsofmeasure.org",
+    "code": "/min"
+  }
+}

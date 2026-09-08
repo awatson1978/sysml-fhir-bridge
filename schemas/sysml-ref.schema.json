@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nodeonsysml.example/schemas/sysml-ref.schema.json",
+  "title": "SysMLRef",
+  "description": "Version-pinned reference to a SysML v2 element (project + commit + element).",
+  "type": "object",
+  "properties": {
+    "standard": { "const": "sysml-v2" },
+    "projectId": { "type": "string", "minLength": 1 },
+    "commitId": { "type": "string", "minLength": 1 },
+    "elementId": { "type": "string", "minLength": 1 },
+    "qualifiedName": { "type": "string" }
+  },
+  "required": ["standard", "projectId", "commitId", "elementId"],
+  "additionalProperties": false
+}

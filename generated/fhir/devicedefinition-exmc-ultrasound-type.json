@@ -1,0 +1,6 @@
+{
+  "resourceType": "DeviceDefinition",
+  "id": "exmc-ultrasound-type",
+  "description": "Diagnostic ultrasound device type for exploration medical operations.",
+  "modelNumber": "HUS-3000"
+}

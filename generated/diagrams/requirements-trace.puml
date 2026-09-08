@@ -1,0 +1,51 @@
+@startuml
+title ExMC requirement-to-FHIR traceability
+component "PerformUltrasoundExam
+(ActionDefinition)" as action_perform_ultrasound
+component "dopplerVelocity
+(AttributeUsage)" as attr_doppler_velocity
+component "heartRateMetric
+(AttributeUsage)" as attr_heart_rate
+component "icd-contract" as ext_icd_contract
+component "ActivityDefinition/perform-ultrasound-exam" as fhir_ActivityDefinition_perform_ultrasound_exam
+component "Device/ultrasound-unit01" as fhir_Device_ultrasound_unit01
+component "DeviceDefinition/exmc-ultrasound-type" as fhir_DeviceDefinition_exmc_ultrasound_type
+component "DeviceMetric/doppler-velocity-capability" as fhir_DeviceMetric_doppler_velocity_capability
+component "DeviceMetric/heart-rate-metric-capability" as fhir_DeviceMetric_heart_rate_metric_capability
+component "profile exmc-physiology-observation
+v0.4.0" as fhir_exmc_physiology_observation
+component "Observation/doppler-velocity-example" as fhir_Observation_doppler_velocity_example
+component "Observation/heart-rate-metric-example" as fhir_Observation_heart_rate_metric_example
+component "ExmcUltrasound
+(PartDefinition)" as part_def_exmc_ultrasound
+component "ultrasoundUnit01
+(PartUsage)" as part_usage_exmc_us_01
+component "medicalDataPort
+(PortUsage)" as port_medical_data
+component "ProvideDiagnosticUltrasound
+(RequirementUsage)" as req_med_042
+component "MedicalTelemetryBandwidth
+(RequirementUsage)" as req_telemetry_014
+component "UltrasoundDiagnosticWorkflowTest
+(ConstraintUsage)" as ver_case_042
+action_perform_ultrasound --> fhir_ActivityDefinition_perform_ultrasound_exam : operationalizes [valid]
+attr_doppler_velocity --> fhir_DeviceMetric_doppler_velocity_capability : realizes [valid]
+attr_doppler_velocity --> fhir_exmc_physiology_observation : emits [valid]
+attr_doppler_velocity --> fhir_Observation_doppler_velocity_example : emits [valid]
+attr_heart_rate --> fhir_DeviceMetric_heart_rate_metric_capability : realizes [valid]
+attr_heart_rate --> fhir_exmc_physiology_observation : emits [valid]
+attr_heart_rate --> fhir_Observation_heart_rate_metric_example : emits [valid]
+part_def_exmc_ultrasound --> action_perform_ultrasound : owns
+part_def_exmc_ultrasound --> attr_doppler_velocity : owns
+part_def_exmc_ultrasound --> attr_heart_rate : owns
+part_def_exmc_ultrasound --> fhir_DeviceDefinition_exmc_ultrasound_type : documentedBy [valid]
+part_def_exmc_ultrasound --> port_medical_data : owns
+part_usage_exmc_us_01 --> fhir_Device_ultrasound_unit01 : operationalizes [valid]
+part_usage_exmc_us_01 --> part_def_exmc_ultrasound : definedBy
+port_medical_data --> ext_icd_contract : documentedBy [valid]
+req_med_042 --> fhir_exmc_physiology_observation : constrains [valid]
+req_med_042 --> part_def_exmc_ultrasound : satisfiedBy
+req_med_042 --> ver_case_042 : verifiedBy
+req_telemetry_014 --> fhir_exmc_physiology_observation : constrains [valid]
+req_telemetry_014 --> port_medical_data : constrains
+@enduml

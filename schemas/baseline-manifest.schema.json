@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nodeonsysml.example/schemas/baseline-manifest.schema.json",
+  "title": "BaselineManifest",
+  "description": "Defines which exact engineering model, FHIR package, mapping rules and generated artifacts constitute a release baseline.",
+  "type": "object",
+  "properties": {
+    "baselineId": { "type": "string", "minLength": 1 },
+    "sysml": {
+      "type": "object",
+      "properties": {
+        "projectId": { "type": "string" },
+        "commitId": { "type": "string" }
+      },
+      "required": ["projectId", "commitId"],
+      "additionalProperties": false
+    },
+    "git": {
+      "type": "object",
+      "properties": { "sha": { "type": "string" } },
+      "required": ["sha"],
+      "additionalProperties": false
+    },
+    "fhirPackage": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "fhirVersion": { "type": "string" }
+      },
+      "required": ["name", "version", "fhirVersion"],
+      "additionalProperties": false
+    },
+    "mappingRules": { "type": "string" },
+    "docTemplates": { "type": "string" },
+    "simConfig": { "type": "string" },
+    "generatedAt": { "type": "string" },
+    "generator": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "buildDigest": { "type": "string" }
+      },
+      "required": ["name", "version", "buildDigest"],
+      "additionalProperties": false
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "kind": {
+            "enum": [
+              "fhir-example",
+              "fhir-profile-binding",
+              "icd",
+              "diagram",
+              "verification-matrix",
+              "manifest",
+              "other"
+            ]
+          },
+          "path": { "type": "string" },
+          "sha256": { "type": "string" }
+        },
+        "required": ["name", "kind", "path", "sha256"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "baselineId",
+    "sysml",
+    "git",
+    "fhirPackage",
+    "mappingRules",
+    "docTemplates",
+    "generatedAt",
+    "generator",
+    "artifacts"
+  ],
+  "additionalProperties": false
+}

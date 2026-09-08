@@ -1,0 +1,510 @@
+[
+  {
+    "id": "trace-b1dfa7618bde",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "req-med-042",
+      "qualifiedName": "MedicalSystem::Requirements::ProvideDiagnosticUltrasound"
+    },
+    "relationship": "constrains",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "canonical": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+      "profileVersion": "0.4.0"
+    },
+    "mappingRuleId": "sysml-requirement-constrains-profile",
+    "mappingRuleVersion": "1.0.1",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "contextual",
+    "sourceHash": "sha256:cedde62c83ee1767ec2006d6b1314ec18ee6bb5add7c3a14814cd5eb7019361d",
+    "targetHash": "sha256:23e8cdb00be72a67bb6f72ec1221adcbf0f653360d559d77d9e7ed0ca2c534b0"
+  },
+  {
+    "id": "trace-895dccd846a8",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "req-telemetry-014",
+      "qualifiedName": "MedicalSystem::Requirements::MedicalTelemetryBandwidth"
+    },
+    "relationship": "constrains",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "canonical": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+      "profileVersion": "0.4.0"
+    },
+    "mappingRuleId": "sysml-requirement-constrains-profile",
+    "mappingRuleVersion": "1.0.1",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "contextual",
+    "sourceHash": "sha256:7c5e46abfacdf443b8b798cba8e0b0aaec70578e549c88d2740d3c8de2963225",
+    "targetHash": "sha256:23e8cdb00be72a67bb6f72ec1221adcbf0f653360d559d77d9e7ed0ca2c534b0"
+  },
+  {
+    "id": "trace-d5232d742257",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "part-def-exmc-ultrasound",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound"
+    },
+    "relationship": "documentedBy",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "resourceType": "DeviceDefinition",
+      "logicalId": "exmc-ultrasound-type"
+    },
+    "mappingRuleId": "sysml-device-type-to-devicedefinition",
+    "mappingRuleVersion": "1.2.0",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:668f4ebd199698301e51a38f7ec6274f56000679f60ce76560a34b4136eaaf84",
+    "targetHash": "sha256:e74b3a286d5408d655820f938814ae66705f0b8e599078d9bbf018d4bbd5f008"
+  },
+  {
+    "id": "trace-d0566e1344c9",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "part-usage-exmc-us-01",
+      "qualifiedName": "MedicalSystem::deployed::ultrasoundUnit01"
+    },
+    "relationship": "operationalizes",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "resourceType": "Device",
+      "logicalId": "ultrasound-unit01"
+    },
+    "mappingRuleId": "sysml-deployed-part-to-device",
+    "mappingRuleVersion": "1.1.0",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:107495c46581d3811a40abf493579f078bfb8919dc2328172955e2f65bd41c02",
+    "targetHash": "sha256:8343b39e86b0ad7edf9df4dbc84edcb501d85f570aed9252156628b04912517f"
+  },
+  {
+    "id": "trace-2cb180d704cd",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-heart-rate",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::heartRateMetric"
+    },
+    "relationship": "realizes",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "resourceType": "DeviceMetric",
+      "logicalId": "heart-rate-metric-capability"
+    },
+    "mappingRuleId": "sysml-metric-to-devicemetric",
+    "mappingRuleVersion": "1.3.0",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:3bb00a4969daadeebf6887544cd0969e8d3e2345ffc3b6d2eda37d8512c7e839",
+    "targetHash": "sha256:619329e5182b887513f7a9766b80457a3c6e6e2864f2ce278290743d90600904"
+  },
+  {
+    "id": "trace-361182933f24",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-heart-rate",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::heartRateMetric"
+    },
+    "relationship": "emits",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "canonical": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+      "profileVersion": "0.4.0"
+    },
+    "mappingRuleId": "sysml-observable-to-fhir-observation",
+    "mappingRuleVersion": "1.3.0",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:3bb00a4969daadeebf6887544cd0969e8d3e2345ffc3b6d2eda37d8512c7e839",
+    "targetHash": "sha256:23e8cdb00be72a67bb6f72ec1221adcbf0f653360d559d77d9e7ed0ca2c534b0"
+  },
+  {
+    "id": "trace-b83dbb883184",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-heart-rate",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::heartRateMetric"
+    },
+    "relationship": "emits",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "resourceType": "Observation",
+      "logicalId": "heart-rate-metric-example"
+    },
+    "mappingRuleId": "sysml-observable-to-fhir-observation",
+    "mappingRuleVersion": "1.3.0",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:3bb00a4969daadeebf6887544cd0969e8d3e2345ffc3b6d2eda37d8512c7e839",
+    "targetHash": "sha256:58ce2509c982feaa947a0c1c6c1d27d528e2645ff2aeab2483c97a808e16795a"
+  },
+  {
+    "id": "trace-fa03e789daab",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-doppler-velocity",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::dopplerVelocity"
+    },
+    "relationship": "realizes",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "resourceType": "DeviceMetric",
+      "logicalId": "doppler-velocity-capability"
+    },
+    "mappingRuleId": "sysml-metric-to-devicemetric",
+    "mappingRuleVersion": "1.3.0",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:e97b3b5b7686e315c496b978fc12651905a8b503c1a21fc7af1a775008a973d2",
+    "targetHash": "sha256:0524ad763f6ba6100c8e762c10a2943bf66fe1cf49ef8ad00afdd6716a8ee5d2"
+  },
+  {
+    "id": "trace-598fcf5510fc",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-doppler-velocity",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::dopplerVelocity"
+    },
+    "relationship": "emits",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "canonical": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+      "profileVersion": "0.4.0"
+    },
+    "mappingRuleId": "sysml-observable-to-fhir-observation",
+    "mappingRuleVersion": "1.3.0",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:e97b3b5b7686e315c496b978fc12651905a8b503c1a21fc7af1a775008a973d2",
+    "targetHash": "sha256:23e8cdb00be72a67bb6f72ec1221adcbf0f653360d559d77d9e7ed0ca2c534b0"
+  },
+  {
+    "id": "trace-e9e68595f3da",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-doppler-velocity",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::dopplerVelocity"
+    },
+    "relationship": "emits",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "resourceType": "Observation",
+      "logicalId": "doppler-velocity-example"
+    },
+    "mappingRuleId": "sysml-observable-to-fhir-observation",
+    "mappingRuleVersion": "1.3.0",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:e97b3b5b7686e315c496b978fc12651905a8b503c1a21fc7af1a775008a973d2",
+    "targetHash": "sha256:8fc3219665f277551a8abcfee1f67334adce5bdb0b98f67f8cfeb5f75d8ec45d"
+  },
+  {
+    "id": "trace-a2baf39d6801",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "port-medical-data",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::medicalDataPort"
+    },
+    "relationship": "documentedBy",
+    "target": {
+      "standard": "external",
+      "kind": "icd-contract",
+      "uri": "generated/exmc-medical-icd.md#medical-data-port",
+      "mimeType": "text/markdown"
+    },
+    "mappingRuleId": "sysml-port-to-icd-contract",
+    "mappingRuleVersion": "1.1.0",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "contextual",
+    "sourceHash": "sha256:2e340f9ba7689d707dd57f0d78c0f6afde51653544322d945a7aea123e9042f2",
+    "targetHash": "sha256:ce20cafa6bea01785ae7362e643453ea02d5971604a192caa3f9558cb66c2292"
+  },
+  {
+    "id": "trace-ddc110e13550",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "action-perform-ultrasound",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::PerformUltrasoundExam"
+    },
+    "relationship": "operationalizes",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "resourceType": "ActivityDefinition",
+      "logicalId": "perform-ultrasound-exam"
+    },
+    "mappingRuleId": "sysml-behavior-to-activitydefinition",
+    "mappingRuleVersion": "1.0.0",
+    "status": "valid",
+    "createdAt": "2027-03-18T16:22:00Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "contextual",
+    "sourceHash": "sha256:0e16a35294c5a0fcc61ccfbf3c36943506b5abece1511288ed652435879aee5e",
+    "targetHash": "sha256:3d880fb904ddc26b88227553f4eb731c03eafd4f1c394648e346e896c832edb1"
+  },
+  {
+    "id": "trace-5a5f1e2313c0",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "req-telemetry-014",
+      "qualifiedName": "MedicalSystem::Requirements::MedicalTelemetryBandwidth"
+    },
+    "relationship": "constrains",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "canonical": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+      "profileVersion": "0.4.0"
+    },
+    "mappingRuleId": "sysml-requirement-constrains-profile",
+    "mappingRuleVersion": "1.0.1",
+    "status": "stale",
+    "createdAt": "2027-03-18T16:25:21Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "contextual",
+    "sourceHash": "sha256:7c5e46abfacdf443b8b798cba8e0b0aaec70578e549c88d2740d3c8de2963225",
+    "targetHash": "sha256:23e8cdb00be72a67bb6f72ec1221adcbf0f653360d559d77d9e7ed0ca2c534b0",
+    "supersedes": "trace-895dccd846a8",
+    "statusReason": "source semantic hash changed"
+  },
+  {
+    "id": "trace-4819e6ddf21c",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-doppler-velocity",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::dopplerVelocity"
+    },
+    "relationship": "realizes",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "resourceType": "DeviceMetric",
+      "logicalId": "doppler-velocity-capability"
+    },
+    "mappingRuleId": "sysml-metric-to-devicemetric",
+    "mappingRuleVersion": "1.3.0",
+    "status": "invalid",
+    "createdAt": "2027-03-18T16:25:21Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:e97b3b5b7686e315c496b978fc12651905a8b503c1a21fc7af1a775008a973d2",
+    "targetHash": "sha256:0524ad763f6ba6100c8e762c10a2943bf66fe1cf49ef8ad00afdd6716a8ee5d2",
+    "supersedes": "trace-fa03e789daab",
+    "statusReason": "source SysML element no longer exists"
+  },
+  {
+    "id": "trace-cfcffd5b7d04",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-doppler-velocity",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::dopplerVelocity"
+    },
+    "relationship": "emits",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "canonical": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+      "profileVersion": "0.4.0"
+    },
+    "mappingRuleId": "sysml-observable-to-fhir-observation",
+    "mappingRuleVersion": "1.3.0",
+    "status": "invalid",
+    "createdAt": "2027-03-18T16:25:21Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:e97b3b5b7686e315c496b978fc12651905a8b503c1a21fc7af1a775008a973d2",
+    "targetHash": "sha256:23e8cdb00be72a67bb6f72ec1221adcbf0f653360d559d77d9e7ed0ca2c534b0",
+    "supersedes": "trace-598fcf5510fc",
+    "statusReason": "source SysML element no longer exists"
+  },
+  {
+    "id": "trace-b36e6e5ef570",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-doppler-velocity",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::dopplerVelocity"
+    },
+    "relationship": "emits",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "resourceType": "Observation",
+      "logicalId": "doppler-velocity-example"
+    },
+    "mappingRuleId": "sysml-observable-to-fhir-observation",
+    "mappingRuleVersion": "1.3.0",
+    "status": "invalid",
+    "createdAt": "2027-03-18T16:25:21Z",
+    "createdBy": "nodeonsysml-demo",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:e97b3b5b7686e315c496b978fc12651905a8b503c1a21fc7af1a775008a973d2",
+    "targetHash": "sha256:8fc3219665f277551a8abcfee1f67334adce5bdb0b98f67f8cfeb5f75d8ec45d",
+    "supersedes": "trace-e9e68595f3da",
+    "statusReason": "source SysML element no longer exists"
+  },
+  {
+    "id": "trace-0a345068a583",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-heart-rate",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::heartRateMetric"
+    },
+    "relationship": "realizes",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "resourceType": "DeviceMetric",
+      "logicalId": "heart-rate-metric-capability"
+    },
+    "mappingRuleId": "sysml-metric-to-devicemetric",
+    "mappingRuleVersion": "1.3.0",
+    "status": "stale",
+    "createdAt": "2027-04-02T09:20:00Z",
+    "createdBy": "evidence-loop",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:3bb00a4969daadeebf6887544cd0969e8d3e2345ffc3b6d2eda37d8512c7e839",
+    "targetHash": "sha256:619329e5182b887513f7a9766b80457a3c6e6e2864f2ce278290743d90600904",
+    "supersedes": "trace-2cb180d704cd",
+    "statusReason": "runtime evidence contradicts model: Model declares bpm (UCUM /min); runtime reports UCUM Hz."
+  },
+  {
+    "id": "trace-226c67eb81ab",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-heart-rate",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::heartRateMetric"
+    },
+    "relationship": "emits",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "canonical": "https://example.org/fhir/exmc/StructureDefinition/exmc-physiology-observation",
+      "profileVersion": "0.4.0"
+    },
+    "mappingRuleId": "sysml-observable-to-fhir-observation",
+    "mappingRuleVersion": "1.3.0",
+    "status": "stale",
+    "createdAt": "2027-04-02T09:20:00Z",
+    "createdBy": "evidence-loop",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:3bb00a4969daadeebf6887544cd0969e8d3e2345ffc3b6d2eda37d8512c7e839",
+    "targetHash": "sha256:23e8cdb00be72a67bb6f72ec1221adcbf0f653360d559d77d9e7ed0ca2c534b0",
+    "supersedes": "trace-361182933f24",
+    "statusReason": "runtime evidence contradicts model: Model declares bpm (UCUM /min); runtime reports UCUM Hz."
+  },
+  {
+    "id": "trace-ee960ee66bdd",
+    "source": {
+      "standard": "sysml-v2",
+      "projectId": "medical-system-foundation",
+      "commitId": "sysml-8df65f0d",
+      "elementId": "attr-heart-rate",
+      "qualifiedName": "MedicalSystem::ExmcUltrasound::heartRateMetric"
+    },
+    "relationship": "emits",
+    "target": {
+      "standard": "fhir",
+      "fhirVersion": "5.0.0",
+      "resourceType": "Observation",
+      "logicalId": "heart-rate-metric-example"
+    },
+    "mappingRuleId": "sysml-observable-to-fhir-observation",
+    "mappingRuleVersion": "1.3.0",
+    "status": "stale",
+    "createdAt": "2027-04-02T09:20:00Z",
+    "createdBy": "evidence-loop",
+    "provenanceId": "tx-exmc-0001",
+    "semanticConfidence": "strong",
+    "sourceHash": "sha256:3bb00a4969daadeebf6887544cd0969e8d3e2345ffc3b6d2eda37d8512c7e839",
+    "targetHash": "sha256:58ce2509c982feaa947a0c1c6c1d27d528e2645ff2aeab2483c97a808e16795a",
+    "supersedes": "trace-b83dbb883184",
+    "statusReason": "runtime evidence contradicts model: Model declares bpm (UCUM /min); runtime reports UCUM Hz."
+  }
+]
