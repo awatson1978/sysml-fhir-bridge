@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "description": "NodeOnSysML: a SysML v2 / HL7 FHIR digital-thread kernel for exploration medical systems",
+  "license": "MIT",
   "workspaces": [
     "packages/*",
     "apps/*"
