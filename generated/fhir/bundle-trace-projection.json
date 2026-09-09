@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "nodeonsysml-trace-projection",
+  "id": "sysml-fhir-bridge-trace-projection",
   "type": "collection",
   "entry": [
     {
@@ -10,9 +10,9 @@
         "url": "https://example.org/fhir/exmc/ConceptMap/exmc-mappings",
         "version": "1.8.2",
         "name": "SysMLtoFHIRCrosswalk",
-        "title": "SysML v2 -> FHIR mapping crosswalk (NodeOnSysML integration profile)",
+        "title": "SysML v2 -> FHIR mapping crosswalk (SysML–FHIR Bridge integration profile)",
         "status": "active",
-        "description": "Machine-readable crosswalk derived from the NodeOnSysML trace graph. noMap elements are semantically legitimate non-mappings (e.g. SysML ports), not gaps.",
+        "description": "Machine-readable crosswalk derived from the SysML–FHIR Bridge trace graph. noMap elements are semantically legitimate non-mappings (e.g. SysML ports), not gaps.",
         "group": [
           {
             "source": "https://www.omg.org/spec/SysML/2.0",
@@ -135,7 +135,7 @@
               "text": "assembler"
             },
             "who": {
-              "display": "nodeonsysml 0.1.0"
+              "display": "sysml-fhir-bridge 0.1.0"
             }
           }
         ],
@@ -161,7 +161,7 @@
             "attachment": {
               "contentType": "text/html",
               "url": "generated/exmc-medical-icd.html",
-              "hash": "efcdb2bcccd1a98a90b2d7793ebcfc411c04c764f2074d1a800862f8bf0e51ec",
+              "hash": "7b340012e8c0d3e7b3fddac553c39f218b972c12c3775ec73be7cb80a6094fa1",
               "title": "ExMC Medical Data Interface ICD"
             }
           }

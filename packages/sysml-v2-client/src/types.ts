@@ -1,7 +1,7 @@
 /**
  * Normalized DTOs over the OMG Systems Modeling API & Services resource model.
  *
- * NodeOnSysML does NOT re-implement SysML v2 language semantics (ADR-002).
+ * SysML–FHIR Bridge does NOT re-implement SysML v2 language semantics (ADR-002).
  * These types normalize what the official API returns (projects, commits,
  * elements, owned-element traversal) into strongly typed structures while
  * retaining unknown fields in `raw` for forward compatibility.

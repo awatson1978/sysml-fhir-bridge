@@ -4,8 +4,8 @@ import type {
   MappingRule,
   SemanticConfidence,
   TraceRelationship,
-} from "@nodeonsysml/model-core";
-import type { FhirResource } from "@nodeonsysml/fhir-adapter";
+} from "@sysml-fhir-bridge/model-core";
+import type { FhirResource } from "@sysml-fhir-bridge/fhir-adapter";
 
 export interface MappingRuleset {
   rulesetId: string;

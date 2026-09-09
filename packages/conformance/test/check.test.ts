@@ -1,11 +1,11 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import type { Bundle, Observation } from "@nodeonsysml/fhir-adapter";
+import type { Bundle, Observation } from "@sysml-fhir-bridge/fhir-adapter";
 import {
   checkBundleAgainstContract,
   generateConformanceReportHtml,
   type InterfaceContract,
-} from "@nodeonsysml/conformance";
+} from "@sysml-fhir-bridge/conformance";
 
 const contract: InterfaceContract = {
   interfaceId: "port-medical-data",

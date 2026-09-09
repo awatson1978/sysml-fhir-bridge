@@ -171,7 +171,7 @@ footer {
 <body>
 <header class="titleblock">
 <div class="stamp">Generated from model — do not edit</div>
-<div class="doc-org"><span>NodeOnSysML digital-thread kernel</span><span>Interface Control Document</span></div>
+<div class="doc-org"><span>SysML–FHIR Bridge digital-thread kernel</span><span>Interface Control Document</span></div>
 <h1>ExMC Medical Data Interface — Interface Control Document</h1>
 <dl class="meta">
 <div><dt>Baseline</dt><dd>exmc-pdr-2027.03</dd></div>
@@ -180,7 +180,7 @@ footer {
 <div><dt>Mapping rules</dt><dd>1.8.2</dd></div>
 <div><dt>SysML project</dt><dd>medical-system-foundation</dd></div>
 <div><dt>Doc templates</dt><dd>3.2.0</dd></div>
-<div><dt>Generator</dt><dd>nodeonsysml 0.1.0</dd></div>
+<div><dt>Generator</dt><dd>sysml-fhir-bridge 0.1.0</dd></div>
 <div><dt>Generated at</dt><dd>2027-03-18T16:22:00Z</dd></div>
 </dl>
 </header>
@@ -200,7 +200,7 @@ footer {
 <tr><th>Buffering / retry</th><td>bounded durable queue; urgent clinical events precede bulk archival transfer</td></tr>
 <tr><th>Security / authorization</th><td>engineering API: OIDC/OAuth2; clinical API: SMART-on-FHIR where applicable; edge: locally enforceable policy with cached trust</td></tr>
 <tr><th>Error semantics</th><td>explicit mapping warnings (NO_DIRECT_MAPPING); no silent unit or cardinality coercion; conflicts reconciled via FHIR version/ETag semantics</td></tr>
-<tr><th>Data provenance</th><td>TransformationRun tx-exmc-0001, ruleset exmc-mappings@1.8.2, generator nodeonsysml@0.1.0</td></tr>
+<tr><th>Data provenance</th><td>TransformationRun tx-exmc-0001, ruleset exmc-mappings@1.8.2, generator sysml-fhir-bridge@0.1.0</td></tr>
 <tr><th>Power / compute / network</th><td>store-and-forward under the downlink budget allocated by MedicalTelemetryBandwidth (req-telemetry-014); no continuous-connectivity assumption</td></tr>
 </tbody></table>
 <h3>1.1 Constraining requirements</h3>
@@ -214,6 +214,6 @@ footer {
 <tr><td><code>sysml-8df65f0d</code></td><td>PDR baseline: ultrasound subsystem with telemetry requirement</td></tr>
 <tr><td><code>sysml-a1b2c3d4</code></td><td>Telemetry requirement tightened to 30 kbit/s; doppler velocity metric removed pending sensor descope</td></tr>
 </tbody></table>
-<footer><span>Deterministic projection of baseline exmc-pdr-2027.03</span><span>nodeonsysml 0.1.0</span></footer>
+<footer><span>Deterministic projection of baseline exmc-pdr-2027.03</span><span>sysml-fhir-bridge 0.1.0</span></footer>
 </body>
 </html>

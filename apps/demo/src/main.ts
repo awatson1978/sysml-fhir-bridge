@@ -1,5 +1,5 @@
 /**
- * NodeOnSysML first vertical slice (design doc, "Minimum viable demonstration"):
+ * SysML–FHIR Bridge first vertical slice (design doc, "Minimum viable demonstration"):
  *
  *   SysML requirement -> medical device part -> modeled metric -> TraceLink
  *   -> FHIR Device / DeviceMetric / Observation profile+example
@@ -25,31 +25,31 @@ import {
   type TransformationRun,
   type VerificationCase,
   type VerificationResult,
-} from "@nodeonsysml/model-core";
-import { FixtureSysmlService } from "@nodeonsysml/sysml-v2-client";
-import { R5Adapter } from "@nodeonsysml/fhir-adapter";
+} from "@sysml-fhir-bridge/model-core";
+import { FixtureSysmlService } from "@sysml-fhir-bridge/sysml-v2-client";
+import { R5Adapter } from "@sysml-fhir-bridge/fhir-adapter";
 import {
   createTraceLink,
   evaluateTrace,
   TraceStore,
   type TraceEvaluationContext,
-} from "@nodeonsysml/trace-engine";
+} from "@sysml-fhir-bridge/trace-engine";
 import {
   findPhiViolations,
   loadRuleset,
   transformSysmlToFhir,
-} from "@nodeonsysml/mapping-engine";
+} from "@sysml-fhir-bridge/mapping-engine";
 import {
   elementsInvalidatedByEvidence,
   importFhirEvidence,
   projectTraceGraphToFhir,
-} from "@nodeonsysml/fhir-loop";
-import type { Bundle, Observation } from "@nodeonsysml/fhir-adapter";
+} from "@sysml-fhir-bridge/fhir-loop";
+import type { Bundle, Observation } from "@sysml-fhir-bridge/fhir-adapter";
 import {
   checkBundleAgainstContract,
   generateConformanceReportHtml,
   type InterfaceContract,
-} from "@nodeonsysml/conformance";
+} from "@sysml-fhir-bridge/conformance";
 import { readFileSync } from "node:fs";
 import {
   DOC_TEMPLATES_VERSION,
@@ -62,10 +62,10 @@ import {
   type ExplorerTargetNode,
   type IcdModel,
   type TraceExplorerInput,
-} from "@nodeonsysml/docgen";
-import { MermaidRenderer } from "@nodeonsysml/render-mermaid";
-import { NomnomlRenderer } from "@nodeonsysml/render-nomnoml";
-import { PlantUmlRenderer } from "@nodeonsysml/render-plantuml";
+} from "@sysml-fhir-bridge/docgen";
+import { MermaidRenderer } from "@sysml-fhir-bridge/render-mermaid";
+import { NomnomlRenderer } from "@sysml-fhir-bridge/render-nomnoml";
+import { PlantUmlRenderer } from "@sysml-fhir-bridge/render-plantuml";
 import { architectureView, requirementsTraceView, traceTargetNodeId } from "./views.js";
 
 // ---------------------------------------------------------------------------
@@ -82,13 +82,13 @@ const GENERATED_AT = "2027-03-18T16:22:00Z";
 const IMPACT_AT = "2027-03-18T16:25:21Z";
 const EVIDENCE_AT = "2027-04-02T09:20:00Z";
 const EVIDENCE_STATE = "runtime-evidence";
-const CREATED_BY = "nodeonsysml-demo";
+const CREATED_BY = "sysml-fhir-bridge-demo";
 const FHIR_PACKAGE = { name: "org.example.exmc", version: "0.4.0", fhirVersion: "5.0.0" };
 const OBSERVATION_PROFILE = "exmc-physiology-observation";
 const GENERATOR = {
-  name: "nodeonsysml",
+  name: "sysml-fhir-bridge",
   version: "0.1.0",
-  buildDigest: semanticHash({ name: "nodeonsysml", version: "0.1.0" }),
+  buildDigest: semanticHash({ name: "sysml-fhir-bridge", version: "0.1.0" }),
 };
 
 async function main(): Promise<void> {
@@ -664,7 +664,7 @@ async function main(): Promise<void> {
 
   const commitInfo = await sysml.listCommits(PROJECT_ID);
   const explorerInput: TraceExplorerInput = {
-    title: "NodeOnSysML Trace Explorer — ExMC baseline",
+    title: "SysML–FHIR Bridge Trace Explorer — ExMC baseline",
     baselineId: BASELINE_ID,
     generatedAt: GENERATED_AT,
     commits: [

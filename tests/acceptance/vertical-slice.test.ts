@@ -6,16 +6,16 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { semanticHash, isFhirRef } from "@nodeonsysml/model-core";
-import { FixtureSysmlService } from "@nodeonsysml/sysml-v2-client";
-import { R5Adapter } from "@nodeonsysml/fhir-adapter";
+import { semanticHash, isFhirRef } from "@sysml-fhir-bridge/model-core";
+import { FixtureSysmlService } from "@sysml-fhir-bridge/sysml-v2-client";
+import { R5Adapter } from "@sysml-fhir-bridge/fhir-adapter";
 import {
   createTraceLink,
   evaluateTrace,
   TraceStore,
-} from "@nodeonsysml/trace-engine";
-import { loadRuleset, transformSysmlToFhir } from "@nodeonsysml/mapping-engine";
-import { generateIcdMarkdown, type IcdModel } from "@nodeonsysml/docgen";
+} from "@sysml-fhir-bridge/trace-engine";
+import { loadRuleset, transformSysmlToFhir } from "@sysml-fhir-bridge/mapping-engine";
+import { generateIcdMarkdown, type IcdModel } from "@sysml-fhir-bridge/docgen";
 
 const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const PROJECT = "medical-system-foundation";
@@ -133,7 +133,7 @@ test("deterministic ICD: same baseline model produces byte-identical output", ()
     fhirPackage: { name: "org.example.exmc", version: "0.4.0", fhirVersion: "5.0.0" },
     mappingRulesVersion: "1.8.2",
     generatedAt: "2027-03-18T16:22:00Z",
-    generator: { name: "nodeonsysml", version: "0.1.0" },
+    generator: { name: "sysml-fhir-bridge", version: "0.1.0" },
     interfaces: [],
     changeHistory: [{ commitId: COMMIT_1, description: "baseline" }],
   };

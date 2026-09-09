@@ -1,5 +1,5 @@
 /**
- * NodeOnSysML canonical domain types.
+ * SysML–FHIR Bridge canonical domain types.
  *
  * Architectural invariants (see docs/architecture/ADR-001):
  *  - SysML and FHIR remain independent semantic authorities.

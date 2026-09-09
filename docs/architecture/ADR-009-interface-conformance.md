@@ -32,7 +32,7 @@ with per-resource checks:
 
 **The boundary (ADR-004 restated):** the report carries
 `fhirProfileValidation: "deferred-to-hl7-validator"` and NEVER claims to do
-FHIR StructureDefinition conformance. NodeOnSysML checks only the
+FHIR StructureDefinition conformance. SysML–FHIR Bridge checks only the
 *interface-contract* layer that sits above FHIR profile validation; the HL7
 FHIR Validator remains the profile-conformance authority.
 

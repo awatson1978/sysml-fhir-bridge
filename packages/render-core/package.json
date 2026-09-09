@@ -1,5 +1,5 @@
 {
-  "name": "@nodeonsysml/render-core",
+  "name": "@sysml-fhir-bridge/render-core",
   "version": "0.1.0",
   "type": "module",
   "main": "src/index.ts",

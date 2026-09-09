@@ -2,16 +2,16 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { assertValid, type TransformationRun } from "@nodeonsysml/model-core";
-import { FixtureSysmlService, type SysmlElement } from "@nodeonsysml/sysml-v2-client";
-import { R5Adapter, type Observation } from "@nodeonsysml/fhir-adapter";
-import { createTraceLink } from "@nodeonsysml/trace-engine";
-import { loadRuleset, transformSysmlToFhir } from "@nodeonsysml/mapping-engine";
+import { assertValid, type TransformationRun } from "@sysml-fhir-bridge/model-core";
+import { FixtureSysmlService, type SysmlElement } from "@sysml-fhir-bridge/sysml-v2-client";
+import { R5Adapter, type Observation } from "@sysml-fhir-bridge/fhir-adapter";
+import { createTraceLink } from "@sysml-fhir-bridge/trace-engine";
+import { loadRuleset, transformSysmlToFhir } from "@sysml-fhir-bridge/mapping-engine";
 import {
   importFhirEvidence,
   elementsInvalidatedByEvidence,
   projectTraceGraphToFhir,
-} from "@nodeonsysml/fhir-loop";
+} from "@sysml-fhir-bridge/fhir-loop";
 
 const ROOT = fileURLToPath(new URL("../../..", import.meta.url));
 const ruleset = loadRuleset(path.join(ROOT, "models/mappings/exmc-mappings.json"));
@@ -130,7 +130,7 @@ test("outbound projection: trace graph becomes a FHIR Bundle with an honest Conc
     source: { sysmlProjectId: "medical-system-foundation", sysmlCommitId: "sysml-8df65f0d", elementIds: [] },
     target: { fhirPackage: "org.example.exmc#0.4.0", resources: [] },
     ruleset: { id: ruleset.rulesetId, version: ruleset.rulesetVersion },
-    generator: { name: "nodeonsysml", version: "0.1.0", buildDigest: "sha256:x" },
+    generator: { name: "sysml-fhir-bridge", version: "0.1.0", buildDigest: "sha256:x" },
     artifacts: [],
   };
   const bundle = projectTraceGraphToFhir({

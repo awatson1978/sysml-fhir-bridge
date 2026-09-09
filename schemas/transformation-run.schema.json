@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nodeonsysml.example/schemas/transformation-run.schema.json",
+  "$id": "https://sysml-fhir-bridge.example/schemas/transformation-run.schema.json",
   "title": "TransformationRun",
   "description": "Provenance record for one SysML->FHIR transformation run.",
   "type": "object",

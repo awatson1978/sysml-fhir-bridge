@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import type { SysMLRef, FhirRef } from "@nodeonsysml/model-core";
-import { createTraceLink, evaluateTrace, TraceStore } from "@nodeonsysml/trace-engine";
+import type { SysMLRef, FhirRef } from "@sysml-fhir-bridge/model-core";
+import { createTraceLink, evaluateTrace, TraceStore } from "@sysml-fhir-bridge/trace-engine";
 
 const source: SysMLRef = {
   standard: "sysml-v2",

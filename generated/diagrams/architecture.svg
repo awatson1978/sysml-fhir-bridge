@@ -10,17 +10,17 @@
 	[&lt;fhir&gt; Medical Edge Gateway]
 	[&lt;fhir&gt; FHIR Gateway]
 	[&lt;artifact&gt; DICOM / artifact store]
-	[&lt;trace&gt; NodeOnSysML kernel]
+	[&lt;trace&gt; SysML–FHIR Bridge kernel]
 	[&lt;sysml&gt; SysML v2 Model Service]
 	[&lt;trace&gt; Trace graph (versioned TraceLinks)]
 	[&lt;fhir&gt; Medical Edge Gateway]- Observations / Reports -&gt;[&lt;fhir&gt; FHIR Gateway]
 	[&lt;fhir&gt; Medical Edge Gateway]- DICOM / raw artifacts -&gt;[&lt;artifact&gt; DICOM / artifact store]
 	[&lt;fhir&gt; FHIR Gateway]- store-and-forward sync -&gt;[&lt;fhir&gt; Medical Edge Gateway]
-	[&lt;trace&gt; NodeOnSysML kernel]- deterministic docgen -&gt;[&lt;artifact&gt; Generated ICD / verification docs]
-	[&lt;trace&gt; NodeOnSysML kernel]- FHIR REST -&gt;[&lt;fhir&gt; FHIR Gateway]
-	[&lt;trace&gt; NodeOnSysML kernel]- artifact metadata -&gt;[&lt;artifact&gt; DICOM / artifact store]
-	[&lt;trace&gt; NodeOnSysML kernel]- Systems Modeling API -&gt;[&lt;sysml&gt; SysML v2 Model Service]
-	[&lt;trace&gt; NodeOnSysML kernel]- versioned TraceLinks -&gt;[&lt;trace&gt; Trace graph (versioned TraceLinks)]
+	[&lt;trace&gt; SysML–FHIR Bridge kernel]- deterministic docgen -&gt;[&lt;artifact&gt; Generated ICD / verification docs]
+	[&lt;trace&gt; SysML–FHIR Bridge kernel]- FHIR REST -&gt;[&lt;fhir&gt; FHIR Gateway]
+	[&lt;trace&gt; SysML–FHIR Bridge kernel]- artifact metadata -&gt;[&lt;artifact&gt; DICOM / artifact store]
+	[&lt;trace&gt; SysML–FHIR Bridge kernel]- Systems Modeling API -&gt;[&lt;sysml&gt; SysML v2 Model Service]
+	[&lt;trace&gt; SysML–FHIR Bridge kernel]- versioned TraceLinks -&gt;[&lt;trace&gt; Trace graph (versioned TraceLinks)]
 	</desc>
 	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="bold" font-style="normal">
 		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
@@ -38,13 +38,13 @@
 					<text x="554.0" y="66.0" stroke="none">deterministic docgen -&gt;</text>
 					<path d="M533.5 36.0 L544 56 L544 76 L544.0 76.0 " fill="none"></path>
 					<text x="-33.2" y="66.0" stroke="none">FHIR REST -&gt;</text>
-					<path d="M428.0 26.8 L107.25 56 L85.80263157894737 76 L85.8 76.0 " fill="none"></path>
+					<path d="M405.0 28.9 L107.25 56 L85.80263157894737 76 L85.8 76.0 " fill="none"></path>
 					<text x="150.4" y="66.0" stroke="none">artifact metadata -&gt;</text>
 					<path d="M449.2 36.0 L366 56 L314.42105263157896 76 L314.4 76.0 " fill="none"></path>
 					<text x="842.0" y="66.0" stroke="none">Systems Modeling API -&gt;</text>
-					<path d="M620.0 29.8 L832 56 L832 76 L832.0 76.0 " fill="none"></path>
+					<path d="M643.0 32.7 L832 56 L832 76 L832.0 76.0 " fill="none"></path>
 					<text x="1140.5" y="66.0" stroke="none">versioned TraceLinks -&gt;</text>
-					<path d="M620.0 24.0 L1130.5 56 L1130.5 76 L1130.5 76.0 " fill="none"></path>
+					<path d="M643.0 25.5 L1130.5 56 L1130.5 76 L1130.5 76.0 " fill="none"></path>
 					<g data-name="Generated ICD / verification docs">
 						<g fill="#eeeeee" stroke="#33322E" data-name="Generated ICD / verification docs">
 							<rect x="403.0" y="76.0" height="36.0" width="282.0" data-name="Generated ICD / verification docs"></rect>
@@ -89,13 +89,13 @@
 							</g>
 						</g>
 					</g>
-					<g data-name="NodeOnSysML kernel">
-						<g fill="#fff3d6" stroke="#33322E" data-name="NodeOnSysML kernel">
-							<rect x="428.0" y="0.0" height="36.0" width="192.0" data-name="NodeOnSysML kernel"></rect>
+					<g data-name="SysML–FHIR Bridge kernel">
+						<g fill="#fff3d6" stroke="#33322E" data-name="SysML–FHIR Bridge kernel">
+							<rect x="405.0" y="0.0" height="36.0" width="238.0" data-name="SysML–FHIR Bridge kernel"></rect>
 						</g>
-						<g transform="translate(428, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="NodeOnSysML kernel" data-compartment="0">
-							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="NodeOnSysML kernel" data-compartment="0">
-								<text x="86.0" y="14.1" stroke="none" text-anchor="middle" data-name="NodeOnSysML kernel" data-compartment="0">NodeOnSysML kernel</text>
+						<g transform="translate(405, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="SysML–FHIR Bridge kernel" data-compartment="0">
+							<g transform="translate(10, 10)" fill="#33322E" text-align="center" data-name="SysML–FHIR Bridge kernel" data-compartment="0">
+								<text x="109.0" y="14.1" stroke="none" text-anchor="middle" data-name="SysML–FHIR Bridge kernel" data-compartment="0">SysML–FHIR Bridge kernel</text>
 								
 							</g>
 						</g>

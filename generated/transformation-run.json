@@ -32,9 +32,9 @@
     "version": "1.8.2"
   },
   "generator": {
-    "name": "nodeonsysml",
+    "name": "sysml-fhir-bridge",
     "version": "0.1.0",
-    "buildDigest": "sha256:e6848e5e7dc71c578ba37e8754053c83d30242190313fbb08b4fd42d301a7c8e"
+    "buildDigest": "sha256:3ffc11f7f9ad65ea466e93ef837eb5fa67618419ef6aec78f383fca05ccbda03"
   },
   "artifacts": [
     {
@@ -67,11 +67,11 @@
     },
     {
       "name": "exmc-medical-icd.md",
-      "sha256": "5118981cb74407ac047fae4e1f86bb219f153fd0be1d030e64c9b43f75702b33"
+      "sha256": "241f693af067887f5f85766ff7a3cd52ba8a008d51967f339109585850ff3ab7"
     },
     {
       "name": "exmc-medical-icd.html",
-      "sha256": "efcdb2bcccd1a98a90b2d7793ebcfc411c04c764f2074d1a800862f8bf0e51ec"
+      "sha256": "7b340012e8c0d3e7b3fddac553c39f218b972c12c3775ec73be7cb80a6094fa1"
     },
     {
       "name": "verification-matrix.md",
@@ -91,15 +91,15 @@
     },
     {
       "name": "diagrams/architecture.mmd",
-      "sha256": "3f60521408b58d535d96920b156257884de0add1ec2b7f6f078b4dd025e1ea34"
+      "sha256": "2e3d4208b29ba0f102e9be645ecd58af45f3ad5e64c856f1bdac2c0f5a824d6d"
     },
     {
       "name": "diagrams/architecture.svg",
-      "sha256": "be3d57b9e6b00c74a11fa1fbf2d3f02f7582eea1be004527146b1a4fd6ae2212"
+      "sha256": "1fac6476784284461ec348f946d2716250b48cc27a3849ecf75365229f207407"
     },
     {
       "name": "diagrams/architecture.puml",
-      "sha256": "1041168aaed18057821871b1e4839b4c9dae5e5bd08b4d37b5347815b294e57f"
+      "sha256": "dc291148a9ccec0556e4b63c5e815c5fbe0160e3307b785d34013cf64cd57633"
     },
     {
       "name": "impact-report.json",
@@ -115,19 +115,19 @@
     },
     {
       "name": "conformance-report.html",
-      "sha256": "dc0a8ab6b9da51313ca25353f3027ba074006dec50e4fc95c6828a2c8e01b6a5"
+      "sha256": "a7ddd05624c02c88022a7ceb37bc05576618287d75cfc70e6b60035232361cb3"
     },
     {
       "name": "fhir/bundle-trace-projection.json",
-      "sha256": "73eef87913413caf2a2c14241aa4fa0e83827dcb874dc5337778cbcc4ea7140d"
+      "sha256": "a09b1c1eca1ecbc23caca964279edf19cf0c02dcbe6fb837d03ea94301cb7187"
     },
     {
       "name": "trace-explorer.html",
-      "sha256": "50cb669d77ba5a0136919de7e37f5439e4240673da53cac8fe5bb5108808972c"
+      "sha256": "7ccbbb9b10832f7c9aab8c1db6d2481ff867f1dd7d56cd69b8a2c96ddbe0f49b"
     },
     {
       "name": "trace-links.json",
-      "sha256": "c88eb8f086ec2368ec21b8dad74b7faedc971443a5b56c50fdbf65d7d7e02283"
+      "sha256": "6fa3b442fe9376054a08fc88dd927669a5cc45d1c7d050381cc49710540fb510"
     }
   ]
 }

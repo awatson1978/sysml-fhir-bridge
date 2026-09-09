@@ -1,4 +1,4 @@
-# NodeOnSysML
+# SysML–FHIR Bridge
 
 **A bridge between how engineers design a system and how that system's data is
 actually recorded in the real world — with automatic bookkeeping that tells you
@@ -27,7 +27,7 @@ less bandwidth now"* — nobody automatically knows which data formats, document
 and tests just became wrong. On real programs, people find out by hand, in
 review meetings, months later.
 
-**NodeOnSysML is the missing connective layer.** It keeps the two worlds
+**SysML–FHIR Bridge is the missing connective layer.** It keeps the two worlds
 separate (they mean different things and should never be merged), and instead
 maintains an explicit, versioned set of *links* between them. When either side
 changes, it tells you exactly what those links now put at risk.
@@ -99,7 +99,7 @@ can trust is one you can regenerate and diff.
 
 ## The one rule everything follows
 
-**SysML and FHIR stay independent authorities. NodeOnSysML owns only the links
+**SysML and FHIR stay independent authorities. SysML–FHIR Bridge owns only the links
 between them.** It never rewrites an engineering model as health data, or vice
 versa. The same discipline applies to the imaging side (DICOM stays the imaging
 authority) and, in the inbound loop, to patient privacy: no patient-identifying

@@ -2,20 +2,20 @@ import {
   isFhirRef,
   type TraceLink,
   type TransformationRun,
-} from "@nodeonsysml/model-core";
-import type { MappingRuleset } from "@nodeonsysml/mapping-engine";
+} from "@sysml-fhir-bridge/model-core";
+import type { MappingRuleset } from "@sysml-fhir-bridge/mapping-engine";
 import type {
   Bundle,
   ConceptMap,
   ConceptMapRelationship,
   DocumentReference,
   Provenance,
-} from "@nodeonsysml/fhir-adapter";
+} from "@sysml-fhir-bridge/fhir-adapter";
 
 /**
  * Outbound projection (ADR-008): render the cross-domain trace graph as a FHIR
  * Bundle so FHIR-native tooling can consume the digital thread in its own
- * idiom. This is a *projection*, not a handover of authority — NodeOnSysML
+ * idiom. This is a *projection*, not a handover of authority — SysML–FHIR Bridge
  * remains the trace authority; the Bundle is a derived, regenerable view.
  *
  * Mapping rules become a ConceptMap (with honest relationship codes and noMap
@@ -53,7 +53,7 @@ export function projectTraceGraphToFhir(input: ProjectToFhirInput): Bundle {
 
   return {
     resourceType: "Bundle",
-    id: "nodeonsysml-trace-projection",
+    id: "sysml-fhir-bridge-trace-projection",
     type: "collection",
     entry: [
       { resource: conceptMap },
@@ -106,10 +106,10 @@ function buildConceptMap(input: ProjectToFhirInput): ConceptMap {
     url: `${input.canonicalBase}/ConceptMap/${input.ruleset.rulesetId}`,
     version: input.ruleset.rulesetVersion,
     name: "SysMLtoFHIRCrosswalk",
-    title: "SysML v2 -> FHIR mapping crosswalk (NodeOnSysML integration profile)",
+    title: "SysML v2 -> FHIR mapping crosswalk (SysML–FHIR Bridge integration profile)",
     status: "active",
     description:
-      "Machine-readable crosswalk derived from the NodeOnSysML trace graph. noMap elements are semantically legitimate non-mappings (e.g. SysML ports), not gaps.",
+      "Machine-readable crosswalk derived from the SysML–FHIR Bridge trace graph. noMap elements are semantically legitimate non-mappings (e.g. SysML ports), not gaps.",
     group: [
       {
         source: "https://www.omg.org/spec/SysML/2.0",

@@ -2,7 +2,7 @@ import type {
   SysMLRef,
   VerificationCase,
   VerificationResult,
-} from "@nodeonsysml/model-core";
+} from "@sysml-fhir-bridge/model-core";
 
 export interface VerificationMatrixInput {
   baselineId: string;

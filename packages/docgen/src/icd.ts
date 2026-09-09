@@ -333,7 +333,7 @@ footer {
 
   h.push('<header class="titleblock">');
   h.push('<div class="stamp">Generated from model — do not edit</div>');
-  h.push('<div class="doc-org"><span>NodeOnSysML digital-thread kernel</span><span>Interface Control Document</span></div>');
+  h.push('<div class="doc-org"><span>SysML–FHIR Bridge digital-thread kernel</span><span>Interface Control Document</span></div>');
   h.push(`<h1>${esc(model.title)}</h1>`);
   h.push('<dl class="meta">');
   const metaCell = (label: string, value: string): void => {

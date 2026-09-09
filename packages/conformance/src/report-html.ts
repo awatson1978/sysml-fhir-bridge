@@ -81,7 +81,7 @@ footer { margin-top: 3rem; padding-top: .8rem; border-top: 1px solid var(--rule-
   );
 
   h.push(
-    `<div class="defer"><strong>Scope.</strong> This report checks the <em>interface-contract</em> layer — permitted payload types, SysML-modeled units, and terminology bindings. Full FHIR StructureDefinition conformance against <code>${esc(report.profile.canonical)}</code> (v${esc(report.profile.version)}, FHIR ${esc(report.profile.fhirVersion)}) is <strong>deferred to the HL7 FHIR Validator</strong> — NodeOnSysML does not reimplement it.</div>`,
+    `<div class="defer"><strong>Scope.</strong> This report checks the <em>interface-contract</em> layer — permitted payload types, SysML-modeled units, and terminology bindings. Full FHIR StructureDefinition conformance against <code>${esc(report.profile.canonical)}</code> (v${esc(report.profile.version)}, FHIR ${esc(report.profile.fhirVersion)}) is <strong>deferred to the HL7 FHIR Validator</strong> — SysML–FHIR Bridge does not reimplement it.</div>`,
   );
 
   h.push("<h2>Checks</h2>");

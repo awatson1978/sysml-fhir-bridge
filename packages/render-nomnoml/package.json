@@ -1,11 +1,11 @@
 {
-  "name": "@nodeonsysml/render-nomnoml",
+  "name": "@sysml-fhir-bridge/render-nomnoml",
   "version": "0.1.0",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "dependencies": {
-    "@nodeonsysml/render-core": "0.1.0",
+    "@sysml-fhir-bridge/render-core": "0.1.0",
     "nomnoml": "^1.7.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nodeonsysml.example/schemas/trace-link.schema.json",
+  "$id": "https://sysml-fhir-bridge.example/schemas/trace-link.schema.json",
   "title": "TraceLink",
   "description": "First-class, versioned cross-domain relationship between a SysML source and a FHIR or external target.",
   "type": "object",

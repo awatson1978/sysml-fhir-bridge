@@ -5,7 +5,7 @@ import {
   deterministicId,
   semanticHash,
   validateAgainstSchema,
-} from "@nodeonsysml/model-core";
+} from "@sysml-fhir-bridge/model-core";
 
 test("canonical JSON is independent of key order", () => {
   const a = { b: 1, a: { d: 2, c: [3, { f: 4, e: 5 }] } };

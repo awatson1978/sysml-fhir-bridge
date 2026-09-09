@@ -3,7 +3,7 @@ import {
   deterministicId,
   type TraceLink,
   type TraceStatus,
-} from "@nodeonsysml/model-core";
+} from "@sysml-fhir-bridge/model-core";
 
 /**
  * Append-only trace store. Historical TraceLinks are never deleted or mutated;

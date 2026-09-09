@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "NodeOnSysML cross-domain API",
+    "title": "SysML–FHIR Bridge cross-domain API",
     "version": "0.1.0",
     "description": "Digital-thread services layered above (not replacing) the OMG Systems Modeling API and FHIR REST. Trace payloads conform to schemas/trace-link.schema.json."
   },

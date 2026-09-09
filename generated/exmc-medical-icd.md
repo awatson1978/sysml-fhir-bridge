@@ -10,7 +10,7 @@
 | FHIR package | `org.example.exmc#0.4.0` (FHIR 5.0.0) |
 | Mapping rules | `1.8.2` |
 | Doc templates | `3.2.0` |
-| Generator | `nodeonsysml 0.1.0` |
+| Generator | `sysml-fhir-bridge 0.1.0` |
 | Generated at | 2027-03-18T16:22:00Z |
 
 ## Interface: medicalDataPort {#medical-data-port}
@@ -33,7 +33,7 @@ Source element: `port-medical-data` (`MedicalSystem::ExmcUltrasound::medicalData
 | Buffering / retry | bounded durable queue; urgent clinical events precede bulk archival transfer |
 | Security / authorization | engineering API: OIDC/OAuth2; clinical API: SMART-on-FHIR where applicable; edge: locally enforceable policy with cached trust |
 | Error semantics | explicit mapping warnings (NO_DIRECT_MAPPING); no silent unit or cardinality coercion; conflicts reconciled via FHIR version/ETag semantics |
-| Data provenance | TransformationRun tx-exmc-0001, ruleset exmc-mappings@1.8.2, generator nodeonsysml@0.1.0 |
+| Data provenance | TransformationRun tx-exmc-0001, ruleset exmc-mappings@1.8.2, generator sysml-fhir-bridge@0.1.0 |
 | Power / compute / network | store-and-forward under the downlink budget allocated by MedicalTelemetryBandwidth (req-telemetry-014); no continuous-connectivity assumption |
 
 ### Constraining requirements

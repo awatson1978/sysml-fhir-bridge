@@ -7,7 +7,7 @@ import {
   type TraceRelationship,
   type TraceStatus,
   type TraceTarget,
-} from "@nodeonsysml/model-core";
+} from "@sysml-fhir-bridge/model-core";
 
 export interface CreateTraceInput {
   source: SysMLRef;

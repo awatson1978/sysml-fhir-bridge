@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nodeonsysml.example/schemas/migration-crosswalk.schema.json",
+  "$id": "https://sysml-fhir-bridge.example/schemas/migration-crosswalk.schema.json",
   "title": "MigrationCrosswalkEntry",
   "description": "Persistent identity crosswalk from a legacy SysML 1.x element to its SysML v2 counterpart.",
   "type": "object",

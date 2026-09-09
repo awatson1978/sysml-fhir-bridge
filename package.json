@@ -1,9 +1,9 @@
 {
-  "name": "nodeonsysml",
+  "name": "sysml-fhir-bridge",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "NodeOnSysML: a SysML v2 / HL7 FHIR digital-thread kernel for exploration medical systems",
+  "description": "SysML–FHIR Bridge: a SysML v2 / HL7 FHIR digital-thread kernel for exploration medical systems",
   "license": "MIT",
   "workspaces": [
     "packages/*",

@@ -6,16 +6,16 @@ import {
   validateAgainstSchema,
   type TraceLink,
   type TraceStatus,
-} from "@nodeonsysml/model-core";
-import { FixtureSysmlService } from "@nodeonsysml/sysml-v2-client";
-import { R5Adapter } from "@nodeonsysml/fhir-adapter";
+} from "@sysml-fhir-bridge/model-core";
+import { FixtureSysmlService } from "@sysml-fhir-bridge/sysml-v2-client";
+import { R5Adapter } from "@sysml-fhir-bridge/fhir-adapter";
 import {
   createTraceLink,
   evaluateTrace,
   TraceStore,
   type TraceEvaluationContext,
-} from "@nodeonsysml/trace-engine";
-import { loadRuleset, transformSysmlToFhir } from "@nodeonsysml/mapping-engine";
+} from "@sysml-fhir-bridge/trace-engine";
+import { loadRuleset, transformSysmlToFhir } from "@sysml-fhir-bridge/mapping-engine";
 
 const ROOT = fileURLToPath(new URL("../../..", import.meta.url));
 const PROJECT_ID = "medical-system-foundation";
@@ -28,7 +28,7 @@ export interface ApiContext {
 }
 
 /**
- * NodeOnSysML cross-domain REST surface (design doc, "REST contracts").
+ * SysML–FHIR Bridge cross-domain REST surface (design doc, "REST contracts").
  * Deliberately NOT a clone of the OMG SysML API or FHIR REST — it exposes the
  * trace/transform/impact services layered above both.
  */
@@ -68,7 +68,7 @@ export async function buildContext(): Promise<ApiContext> {
         targetHash: semanticHash(mapping.resource ?? mapping.target),
         provenanceId: "tx-api-seed",
         createdAt: SEEDED_AT,
-        createdBy: "nodeonsysml-api",
+        createdBy: "sysml-fhir-bridge-api",
       }),
     );
   }

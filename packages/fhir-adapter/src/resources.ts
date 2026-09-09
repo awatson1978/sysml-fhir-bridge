@@ -1,5 +1,5 @@
 /**
- * Minimal FHIR R5 resource typings for the resource set NodeOnSysML emits.
+ * Minimal FHIR R5 resource typings for the resource set SysML–FHIR Bridge emits.
  *
  * These are deliberately NOT a complete FHIR object model: the HL7 FHIR
  * Validator remains the conformance authority (ADR-004). They exist so that

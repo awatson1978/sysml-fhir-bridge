@@ -7,7 +7,7 @@
 SysML v2 owns design-time engineering semantics (requirements, structure,
 behavior, constraints, verification relationships). FHIR owns clinical/runtime
 semantics (Device, DeviceMetric, Observation, DiagnosticReport, workflow,
-provenance, audit). NodeOnSysML never serializes SysML into FHIR or
+provenance, audit). SysML–FHIR Bridge never serializes SysML into FHIR or
 reconstructs FHIR as SysML blocks. The only cross-domain authority is the
 versioned TraceLink graph (`packages/trace-engine`).
 

@@ -1,13 +1,13 @@
 {
-  "name": "@nodeonsysml/fhir-loop",
+  "name": "@sysml-fhir-bridge/fhir-loop",
   "version": "0.1.0",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "dependencies": {
-    "@nodeonsysml/model-core": "0.1.0",
-    "@nodeonsysml/sysml-v2-client": "0.1.0",
-    "@nodeonsysml/fhir-adapter": "0.1.0",
-    "@nodeonsysml/mapping-engine": "0.1.0"
+    "@sysml-fhir-bridge/model-core": "0.1.0",
+    "@sysml-fhir-bridge/sysml-v2-client": "0.1.0",
+    "@sysml-fhir-bridge/fhir-adapter": "0.1.0",
+    "@sysml-fhir-bridge/mapping-engine": "0.1.0"
   }
 }

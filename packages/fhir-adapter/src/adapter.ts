@@ -1,4 +1,4 @@
-import type { FhirRef } from "@nodeonsysml/model-core";
+import type { FhirRef } from "@sysml-fhir-bridge/model-core";
 import type { FhirResource } from "./resources.js";
 
 export type FhirVersion = "4.0.1" | "4.3.0" | "5.0.0";

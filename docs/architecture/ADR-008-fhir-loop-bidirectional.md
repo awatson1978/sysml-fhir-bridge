@@ -22,7 +22,7 @@ A *projection*, not a handover of authority. The trace graph is rendered as:
   non-mapping, not a gap;
 - the transformation run → **Provenance**;
 - generated documents → **DocumentReference**.
-NodeOnSysML remains the trace authority; the Bundle is derived and regenerable.
+SysML–FHIR Bridge remains the trace authority; the Bundle is derived and regenerable.
 This mirrors FHIR's own canonical-resource pattern, and is the cross-standard
 generalization of terminology mapping (ConceptMap between *standards*, not just
 code systems).

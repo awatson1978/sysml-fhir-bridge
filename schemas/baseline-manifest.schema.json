@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nodeonsysml.example/schemas/baseline-manifest.schema.json",
+  "$id": "https://sysml-fhir-bridge.example/schemas/baseline-manifest.schema.json",
   "title": "BaselineManifest",
   "description": "Defines which exact engineering model, FHIR package, mapping rules and generated artifacts constitute a release baseline.",
   "type": "object",

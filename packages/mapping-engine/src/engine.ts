@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
-import { assertValid, type MappingRule } from "@nodeonsysml/model-core";
-import type { SysmlElement } from "@nodeonsysml/sysml-v2-client";
+import { assertValid, type MappingRule } from "@sysml-fhir-bridge/model-core";
+import type { SysmlElement } from "@sysml-fhir-bridge/sysml-v2-client";
 import type {
   Device,
   DeviceDefinition,
@@ -8,7 +8,7 @@ import type {
   ActivityDefinition,
   Observation,
   FhirAdapter,
-} from "@nodeonsysml/fhir-adapter";
+} from "@sysml-fhir-bridge/fhir-adapter";
 import type {
   GeneratedMapping,
   MappingError,

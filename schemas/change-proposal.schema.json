@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nodeonsysml.example/schemas/change-proposal.schema.json",
+  "$id": "https://sysml-fhir-bridge.example/schemas/change-proposal.schema.json",
   "title": "ChangeProposal",
   "description": "A design-feedback item produced by the learning loop: runtime clinical evidence proposing a change to the engineering model. Proposals are inputs to human review (a proposed SysML branch/commit), never direct model mutations.",
   "type": "object",

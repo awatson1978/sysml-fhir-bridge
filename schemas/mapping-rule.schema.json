@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nodeonsysml.example/schemas/mapping-rule.schema.json",
+  "$id": "https://sysml-fhir-bridge.example/schemas/mapping-rule.schema.json",
   "title": "MappingRule",
   "description": "Human-approved crosswalk rule. Empty targetResourceTypes means: no semantically legitimate direct FHIR mapping.",
   "type": "object",

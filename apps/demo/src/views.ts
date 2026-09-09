@@ -1,6 +1,6 @@
-import type { ModelView } from "@nodeonsysml/render-core";
-import type { SysmlElement } from "@nodeonsysml/sysml-v2-client";
-import type { TraceLink } from "@nodeonsysml/model-core";
+import type { ModelView } from "@sysml-fhir-bridge/render-core";
+import type { SysmlElement } from "@sysml-fhir-bridge/sysml-v2-client";
+import type { TraceLink } from "@sysml-fhir-bridge/model-core";
 
 /** Project the SysML snapshot + trace graph into a requirements-trace view. */
 export function requirementsTraceView(
@@ -71,10 +71,10 @@ function shortCanonical(canonical: string): string {
 export function architectureView(): ModelView {
   return {
     id: "architecture",
-    title: "NodeOnSysML reference architecture",
+    title: "SysML–FHIR Bridge reference architecture",
     nodes: [
       { id: "sys", label: "SysML v2 Model Service", kind: "sysml" },
-      { id: "nos", label: "NodeOnSysML kernel", kind: "trace" },
+      { id: "nos", label: "SysML–FHIR Bridge kernel", kind: "trace" },
       { id: "trace", label: "Trace graph (versioned TraceLinks)", kind: "trace" },
       { id: "fhir", label: "FHIR Gateway", kind: "fhir" },
       { id: "edge", label: "Medical Edge Gateway", kind: "fhir" },

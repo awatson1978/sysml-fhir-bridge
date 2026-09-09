@@ -2,13 +2,13 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { R5Adapter } from "@nodeonsysml/fhir-adapter";
-import type { SysmlElement } from "@nodeonsysml/sysml-v2-client";
+import { R5Adapter } from "@sysml-fhir-bridge/fhir-adapter";
+import type { SysmlElement } from "@sysml-fhir-bridge/sysml-v2-client";
 import {
   findPhiViolations,
   loadRuleset,
   transformSysmlToFhir,
-} from "@nodeonsysml/mapping-engine";
+} from "@sysml-fhir-bridge/mapping-engine";
 
 const ROOT = fileURLToPath(new URL("../../..", import.meta.url));
 const ruleset = loadRuleset(path.join(ROOT, "models/mappings/exmc-mappings.json"));

@@ -1,10 +1,10 @@
 import {
   deterministicId,
   type ChangeProposal,
-} from "@nodeonsysml/model-core";
-import type { SysmlElement } from "@nodeonsysml/sysml-v2-client";
-import type { MappingRuleset } from "@nodeonsysml/mapping-engine";
-import type { Observation, Procedure } from "@nodeonsysml/fhir-adapter";
+} from "@sysml-fhir-bridge/model-core";
+import type { SysmlElement } from "@sysml-fhir-bridge/sysml-v2-client";
+import type { MappingRuleset } from "@sysml-fhir-bridge/mapping-engine";
+import type { Observation, Procedure } from "@sysml-fhir-bridge/fhir-adapter";
 
 /**
  * Inbound projection (ADR-008): the learning-health-system loop.

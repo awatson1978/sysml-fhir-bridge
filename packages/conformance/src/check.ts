@@ -1,4 +1,4 @@
-import type { Bundle, Observation } from "@nodeonsysml/fhir-adapter";
+import type { Bundle, Observation } from "@sysml-fhir-bridge/fhir-adapter";
 import type { InterfaceContract } from "./contract.js";
 
 export type CheckKind =
@@ -22,7 +22,7 @@ export interface ConformanceReport {
   checkedAt: string;
   profile: { canonical: string; version: string; fhirVersion: string };
   /**
-   * NodeOnSysML checks the interface-contract layer only. Full FHIR
+   * SysML–FHIR Bridge checks the interface-contract layer only. Full FHIR
    * StructureDefinition conformance is delegated to the HL7 FHIR Validator
    * (ADR-004): we never claim to reimplement it.
    */

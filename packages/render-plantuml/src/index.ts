@@ -2,7 +2,7 @@ import type {
   DiagramRenderer,
   ModelView,
   RenderedDiagram,
-} from "@nodeonsysml/render-core";
+} from "@sysml-fhir-bridge/render-core";
 
 /**
  * Projects a ModelView to deterministic PlantUML component-diagram source.

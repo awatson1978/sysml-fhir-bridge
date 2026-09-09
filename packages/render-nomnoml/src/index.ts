@@ -3,7 +3,7 @@ import type {
   DiagramRenderer,
   ModelView,
   RenderedDiagram,
-} from "@nodeonsysml/render-core";
+} from "@sysml-fhir-bridge/render-core";
 
 /** Renders a ModelView to real SVG in-process via nomnoml (no browser, no Java). */
 export class NomnomlRenderer implements DiagramRenderer {

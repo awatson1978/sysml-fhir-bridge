@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nodeonsysml.example/schemas/verification-result.schema.json",
+  "$id": "https://sysml-fhir-bridge.example/schemas/verification-result.schema.json",
   "title": "VerificationResult",
   "description": "Result of executing a verification case, with linked evidence artifacts.",
   "type": "object",

@@ -1,4 +1,4 @@
-import type { SysmlElement } from "@nodeonsysml/sysml-v2-client";
+import type { SysmlElement } from "@sysml-fhir-bridge/sysml-v2-client";
 
 export interface PhiViolation {
   elementId: string;

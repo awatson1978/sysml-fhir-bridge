@@ -4,7 +4,7 @@
 
 ## Decision
 
-NodeOnSysML consumes SysML v2 through the OMG Systems Modeling API & Services
+SysML–FHIR Bridge consumes SysML v2 through the OMG Systems Modeling API & Services
 semantics (projects, commits, branches, elements, owned-element traversal)
 rather than re-implementing SysML language semantics in TypeScript.
 `packages/sysml-v2-client` defines the boundary interface plus normalized DTOs

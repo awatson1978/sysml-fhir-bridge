@@ -5,7 +5,7 @@
 ## Decision
 
 The FHIR deployment release is unspecified by the mission context, so
-NodeOnSysML never hard-codes one FHIR release into the trace model. Every
+SysML–FHIR Bridge never hard-codes one FHIR release into the trace model. Every
 `FhirRef` carries `fhirVersion`, and profile references carry
 `profileVersion`. `packages/fhir-adapter` exposes a `FhirAdapter` boundary
 (`R5Adapter` implemented; R4/R4B adapters slot in beside it) that mints

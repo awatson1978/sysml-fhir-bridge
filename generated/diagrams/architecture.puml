@@ -1,10 +1,10 @@
 @startuml
-title NodeOnSysML reference architecture
+title SysML–FHIR Bridge reference architecture
 component "Generated ICD / verification docs" as docs
 component "Medical Edge Gateway" as edge
 component "FHIR Gateway" as fhir
 component "DICOM / artifact store" as img
-database "NodeOnSysML kernel" as nos
+database "SysML–FHIR Bridge kernel" as nos
 component "SysML v2 Model Service" as sys
 database "Trace graph (versioned TraceLinks)" as trace
 edge --> fhir : Observations / Reports
